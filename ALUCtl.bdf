@@ -252,7 +252,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 712 136 808 232)
 	(text "SameBit" (rect 5 0 55 19)(font "Intel Clear" (font_size 8)))
-	(text "inst1" (rect 8 75 30 92)(font "Intel Clear" ))
+	(text "sameBitUnit" (rect 8 75 65 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -361,10 +361,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 488 296)
 	(pt 488 408)
-)
-(connector
-	(pt 592 288)
-	(pt 672 288)
 )
 (connector
 	(pt 344 48)
@@ -479,6 +475,11 @@ refer to the applicable agreement for further details.
 	(text "SLT_or_OR" (rect 426 504 480 521)(font "Intel Clear" ))
 	(pt 416 520)
 	(pt 512 520)
+)
+(connector
+	(text "SLT_or_SUB" (rect 602 272 661 289)(font "Intel Clear" ))
+	(pt 592 288)
+	(pt 672 288)
 )
 (junction (pt 288 408))
 (junction (pt 288 424))

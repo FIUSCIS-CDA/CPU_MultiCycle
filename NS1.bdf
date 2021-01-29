@@ -1479,18 +1479,6 @@ refer to the applicable agreement for further details.
 	(pt 688 488)
 )
 (connector
-	(pt 984 240)
-	(pt 992 240)
-)
-(connector
-	(pt 992 240)
-	(pt 992 224)
-)
-(connector
-	(pt 992 224)
-	(pt 1016 224)
-)
-(connector
 	(text "SW" (rect 658 232 674 249)(font "Intel Clear" ))
 	(pt 648 248)
 	(pt 920 248)
@@ -1666,6 +1654,19 @@ refer to the applicable agreement for further details.
 	(text "STATE1_AND___ADDI_OR_LW_OR_SW_OR_RTYPE___" (rect 1072 49 1089 319)(font "Intel Clear" )(vertical))
 	(pt 1088 288)
 	(pt 1088 216)
+)
+(connector
+	(pt 984 240)
+	(pt 992 240)
+)
+(connector
+	(pt 992 240)
+	(pt 992 224)
+)
+(connector
+	(text "ADDI_or_LW_or_SW_or_RTYPE" (rect 992 208 1145 225)(font "Intel Clear" ))
+	(pt 992 224)
+	(pt 1016 224)
 )
 (junction (pt 264 696))
 (junction (pt 256 344))

@@ -1321,18 +1321,6 @@ refer to the applicable agreement for further details.
 	(pt 1048 352)
 )
 (connector
-	(pt 1128 344)
-	(pt 1128 240)
-)
-(connector
-	(pt 1128 240)
-	(pt 1144 240)
-)
-(connector
-	(pt 1112 344)
-	(pt 1128 344)
-)
-(connector
 	(pt 1232 232)
 	(pt 1232 288)
 )
@@ -1351,6 +1339,19 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1168 344)
 	(pt 1184 344)
+)
+(connector
+	(text "ADDI_or_J_or_BEQ" (rect 1112 255 1129 348)(font "Intel Clear" )(vertical))
+	(pt 1128 344)
+	(pt 1128 240)
+)
+(connector
+	(pt 1128 240)
+	(pt 1144 240)
+)
+(connector
+	(pt 1112 344)
+	(pt 1128 344)
 )
 (junction (pt 272 24))
 (junction (pt 256 104))

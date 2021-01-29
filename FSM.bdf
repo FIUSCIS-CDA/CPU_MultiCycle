@@ -1084,42 +1084,6 @@ refer to the applicable agreement for further details.
 	(pt 1016 -32)
 )
 (connector
-	(pt 1064 -32)
-	(pt 1096 -32)
-)
-(connector
-	(pt 1120 544)
-	(pt 1096 544)
-)
-(connector
-	(pt 1096 384)
-	(pt 1120 384)
-)
-(connector
-	(pt 1096 384)
-	(pt 1096 544)
-)
-(connector
-	(pt 1096 208)
-	(pt 1120 208)
-)
-(connector
-	(pt 1096 208)
-	(pt 1096 384)
-)
-(connector
-	(pt 1096 40)
-	(pt 1120 40)
-)
-(connector
-	(pt 1096 -32)
-	(pt 1096 40)
-)
-(connector
-	(pt 1096 40)
-	(pt 1096 208)
-)
-(connector
 	(pt 976 -64)
 	(pt 1224 -64)
 )
@@ -1560,102 +1524,6 @@ refer to the applicable agreement for further details.
 	(pt 352 312)
 )
 (connector
-	(pt 1208 48)
-	(pt 1272 48)
-)
-(connector
-	(pt 1208 -24)
-	(pt 1208 48)
-)
-(connector
-	(pt 1272 48)
-	(pt 1272 64)
-)
-(connector
-	(pt 1208 160)
-	(pt 1272 160)
-)
-(connector
-	(pt 1208 48)
-	(pt 1208 160)
-)
-(connector
-	(pt 1272 160)
-	(pt 1272 144)
-)
-(connector
-	(pt 1208 216)
-	(pt 1272 216)
-)
-(connector
-	(pt 1208 160)
-	(pt 1208 216)
-)
-(connector
-	(pt 1272 216)
-	(pt 1272 232)
-)
-(connector
-	(pt 1208 328)
-	(pt 1272 328)
-)
-(connector
-	(pt 1272 328)
-	(pt 1272 312)
-)
-(connector
-	(pt 1208 384)
-	(pt 1272 384)
-)
-(connector
-	(pt 1272 384)
-	(pt 1272 400)
-)
-(connector
-	(pt 1208 496)
-	(pt 1272 496)
-)
-(connector
-	(pt 1272 496)
-	(pt 1272 480)
-)
-(connector
-	(pt 1208 216)
-	(pt 1208 328)
-)
-(connector
-	(pt 1208 328)
-	(pt 1208 384)
-)
-(connector
-	(pt 1208 544)
-	(pt 1272 544)
-)
-(connector
-	(pt 1208 384)
-	(pt 1208 496)
-)
-(connector
-	(pt 1272 544)
-	(pt 1272 560)
-)
-(connector
-	(pt 1208 656)
-	(pt 1272 656)
-)
-(connector
-	(pt 1208 496)
-	(pt 1208 544)
-)
-(connector
-	(pt 1208 544)
-	(pt 1208 656)
-)
-(connector
-	(pt 1272 656)
-	(pt 1272 640)
-)
-(connector
 	(pt 1224 104)
 	(pt 1240 104)
 )
@@ -2020,6 +1888,140 @@ refer to the applicable agreement for further details.
 	(text "NS0MUXout" (rect 1058 568 1115 585)(font "Intel Clear" ))
 	(pt 1048 584)
 	(pt 1112 584)
+)
+(connector
+	(pt 1064 -32)
+	(pt 1096 -32)
+)
+(connector
+	(pt 1120 544)
+	(pt 1096 544)
+)
+(connector
+	(pt 1096 384)
+	(pt 1120 384)
+)
+(connector
+	(pt 1096 384)
+	(pt 1096 544)
+)
+(connector
+	(pt 1096 208)
+	(pt 1120 208)
+)
+(connector
+	(pt 1096 208)
+	(pt 1096 384)
+)
+(connector
+	(pt 1096 40)
+	(pt 1120 40)
+)
+(connector
+	(text "notRESET" (rect 1080 -9 1097 37)(font "Intel Clear" )(vertical))
+	(pt 1096 -32)
+	(pt 1096 40)
+)
+(connector
+	(pt 1096 40)
+	(pt 1096 208)
+)
+(connector
+	(pt 1208 48)
+	(pt 1272 48)
+)
+(connector
+	(pt 1208 -24)
+	(pt 1208 48)
+)
+(connector
+	(pt 1272 48)
+	(pt 1272 64)
+)
+(connector
+	(pt 1208 160)
+	(pt 1272 160)
+)
+(connector
+	(text "Power" (rect 1192 124 1209 154)(font "Intel Clear" )(vertical))
+	(pt 1208 48)
+	(pt 1208 160)
+)
+(connector
+	(pt 1272 160)
+	(pt 1272 144)
+)
+(connector
+	(pt 1208 216)
+	(pt 1272 216)
+)
+(connector
+	(pt 1208 160)
+	(pt 1208 216)
+)
+(connector
+	(pt 1272 216)
+	(pt 1272 232)
+)
+(connector
+	(pt 1208 328)
+	(pt 1272 328)
+)
+(connector
+	(pt 1272 328)
+	(pt 1272 312)
+)
+(connector
+	(pt 1208 384)
+	(pt 1272 384)
+)
+(connector
+	(pt 1272 384)
+	(pt 1272 400)
+)
+(connector
+	(pt 1208 496)
+	(pt 1272 496)
+)
+(connector
+	(pt 1272 496)
+	(pt 1272 480)
+)
+(connector
+	(pt 1208 216)
+	(pt 1208 328)
+)
+(connector
+	(pt 1208 328)
+	(pt 1208 384)
+)
+(connector
+	(pt 1208 544)
+	(pt 1272 544)
+)
+(connector
+	(pt 1208 384)
+	(pt 1208 496)
+)
+(connector
+	(pt 1272 544)
+	(pt 1272 560)
+)
+(connector
+	(pt 1208 656)
+	(pt 1272 656)
+)
+(connector
+	(pt 1208 496)
+	(pt 1208 544)
+)
+(connector
+	(pt 1208 544)
+	(pt 1208 656)
+)
+(connector
+	(pt 1272 656)
+	(pt 1272 640)
 )
 (junction (pt 1000 0))
 (junction (pt 1320 360))
