@@ -305,10 +305,6 @@ refer to the applicable agreement for further details.
 	(pt 352 512)
 )
 (connector
-	(pt 416 520)
-	(pt 512 520)
-)
-(connector
 	(pt 344 128)
 	(pt 488 128)
 )
@@ -478,6 +474,11 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 896 280)
 	(pt 944 280)
+)
+(connector
+	(text "SLT_or_OR" (rect 426 504 480 521)(font "Intel Clear" ))
+	(pt 416 520)
+	(pt 512 520)
 )
 (junction (pt 288 408))
 (junction (pt 288 424))

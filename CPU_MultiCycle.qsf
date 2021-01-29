@@ -63,7 +63,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name BDF_FILE CTRL.bdf
-set_global_assignment -name SOURCE_FILE db/CPU_MultiCycle.cmp.rdb
 set_global_assignment -name BDF_FILE ALUCtl.bdf
 set_global_assignment -name BDF_FILE ../SameBit/SameBit.bdf
 set_global_assignment -name BDF_FILE ../MUX2/MUX2.bdf
@@ -87,10 +86,11 @@ set_global_assignment -name BDF_FILE ../Decoder_32/Decoder_32.bdf
 set_global_assignment -name BDF_FILE ../MUX4/MUX4.bdf
 set_global_assignment -name BDF_FILE ../MUX3/MUX3.bdf
 set_global_assignment -name BDF_FILE ../ALU32/ALU32.bdf
-set_global_assignment -name VERILOG_FILE ../DM/DM.v
 set_global_assignment -name BDF_FILE ../SPLICE_PCJ/SPLICE_PCJ.bdf
 set_global_assignment -name BDF_FILE ../ALU32/ALUBit31.bdf
 set_global_assignment -name BDF_FILE ../ALU32/ALUBits0To30.bdf
 set_global_assignment -name BDF_FILE ../OneBitAdder/OneBitAdder.bdf
 set_global_assignment -name BDF_FILE ../INC4/INC4.bdf
+set_global_assignment -name BDF_FILE ../ALU32/OverflowDetection.bdf
+set_global_assignment -name VERILOG_FILE ../DM/DM_asynch.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

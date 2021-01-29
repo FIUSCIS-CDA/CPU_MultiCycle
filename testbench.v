@@ -1,39 +1,36 @@
 `timescale 1ps / 1ps
-module testbenchBubble();
-// Clock should be set to period=100 to accomodate memory
-// Total execution time: 85900ps
-   reg clk_tb, rst_tb;
+module testbench();
+   reg clk, rst;
    
    localparam CLK_PERIOD = 100;
    
-   CPU_MultiCycle myCPU(clk_tb, rst_tb);
+   CPU_MultiCycle myCPU(clk, rst);
    
    initial begin
       // initialize instruction memory
-      myCPU.b2v_IDM.memory[0] = 'b10001100000100000000000111110100; // lw $s0, 500($zero)   # Assume arr=512  0
-      myCPU.b2v_IDM.memory[1] = 'b10001100000100010000000111111000; // lw $s1, 504($zero)    # Size (N) is 12  4
+      myCPU.b2v_IDM.memory[0] = 'b00100000000100000000001000000000; // 			addi $s0, $zero, 512  			0	**
+      myCPU.b2v_IDM.memory[1] = 'b00100000000100010000000000001100; // 			addi $s1, $zero, 12				4	**
       /////////////////////////////////////////////////////////////
       // PUT BUBBLE SORT CODE HERE
-      myCPU.b2v_IDM.memory[2] = 'b10001100000011010000000111111100; // lw $t5, 508($zero)                      8
-      myCPU.b2v_IDM.memory[3] = 'b00000010001011011001000000100010; // sub $s2, $s1, $t5                     12
-      myCPU.b2v_IDM.memory[4] = 'b00000000000100100100000000101010; // loop1:   slt $t0, $zero, $s2            16
-      myCPU.b2v_IDM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1               20
-      myCPU.b2v_IDM.memory[6] = 'b00000000000000001001100000100000; // add $s3, $zero, $zero                      24
-      myCPU.b2v_IDM.memory[7] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2              28
-      myCPU.b2v_IDM.memory[8] = 'b00010001001000000000000000001011; // beq $t1, $zero, doneloop2              32
-      myCPU.b2v_IDM.memory[9] = 'b00000010011100110101000000100000; // add $t2, $s3, $s3                      36
-      myCPU.b2v_IDM.memory[10] = 'b00000001010010100101000000100000; // add $t2, $t2, $t2                      40
-      myCPU.b2v_IDM.memory[11] = 'b00000010000010100101100000100000; // add $t3, $s0, $t2                      44
-      myCPU.b2v_IDM.memory[12] = 'b10001101011101000000000000000000; // lw $s4, 0($t3)                         48
-      myCPU.b2v_IDM.memory[13] = 'b10001101011101010000000000000100; // lw $s5, 4($t3)                         52
-      myCPU.b2v_IDM.memory[14] = 'b00000010101101000110000000101010; // slt $t4, $s5, $s4                      56
-      myCPU.b2v_IDM.memory[15] = 'b00010001100000000000000000000010; // beq $t4, $zero, doneif                 60
-      myCPU.b2v_IDM.memory[16] = 'b10101101011101010000000000000000; // sw $s5, 0($t3)                         64
-      myCPU.b2v_IDM.memory[17] = 'b10101101011101000000000000000100; // sw $s4, 4($t3)                         68
-      myCPU.b2v_IDM.memory[18] = 'b00000010011011011001100000100000; // doneif:    add $s3, $s3, $t5            72
-      myCPU.b2v_IDM.memory[19] = 'b00001000000000000000000000000111; // j loop2 //instruction 9                76
-      myCPU.b2v_IDM.memory[20] = 'b00000010010011011001000000100010; //doneloop2: sub $s2, $s2, $t5            80
-      myCPU.b2v_IDM.memory[21] = 'b00001000000000000000000000000100; // j loop1 //instruction 6                84
+      myCPU.b2v_IDM.memory[2] = 'b00100010001100101111111111111111; // 			addi $s2, $s1, -1				8	**
+      myCPU.b2v_IDM.memory[3] = 'b00000000000100100100000000101010; // loop1:   slt $t0, $zero, $s2            	12
+      myCPU.b2v_IDM.memory[4] = 'b00010001000000000000000000010000; // 			beq $t0, $zero, doneloop1(16)	16        
+      myCPU.b2v_IDM.memory[5] = 'b00000000000000001001100000100000; // 			add $s3, $zero, $zero			20           
+      myCPU.b2v_IDM.memory[6] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2				24
+      myCPU.b2v_IDM.memory[7] = 'b00010001001000000000000000001011; // 			beq $t1, $zero, doneloop2(11)   28      
+      myCPU.b2v_IDM.memory[8] = 'b00000010011100110101000000100000; // 			add $t2, $s3, $s3               32       
+      myCPU.b2v_IDM.memory[9] = 'b00000001010010100101000000100000; // 			add $t2, $t2, $t2               36       
+      myCPU.b2v_IDM.memory[10] = 'b00000010000010100101100000100000; // 		add $t3, $s0, $t2               40       
+      myCPU.b2v_IDM.memory[11] = 'b10001101011101000000000000000000; // 		lw $s4, 0($t3)                  44       
+      myCPU.b2v_IDM.memory[12] = 'b10001101011101010000000000000100; // 		lw $s5, 4($t3)                  48       
+      myCPU.b2v_IDM.memory[13] = 'b00000010101101000110000000101010; // 		slt $t4, $s5, $s4               52       
+      myCPU.b2v_IDM.memory[14] = 'b00010001100000000000000000000010; // 		beq $t4, $zero, doneif          56       
+      myCPU.b2v_IDM.memory[15] = 'b10101101011101010000000000000000; // 		sw $s5, 0($t3)                  60       
+      myCPU.b2v_IDM.memory[16] = 'b10101101011101000000000000000100; // 		sw $s4, 4($t3)                  64       
+      myCPU.b2v_IDM.memory[17] = 'b00100010011100110000000000000001; // doneif: addi $s3, $s2, 1                68	**
+      myCPU.b2v_IDM.memory[18] = 'b00001000000000000000000000000110; // 		j loop2 (7) //instruction 9     72	**
+      myCPU.b2v_IDM.memory[19] = 'b00100010010100101111111111111111; //doneloop2: addi $s2, $s2, -1				76	**
+      myCPU.b2v_IDM.memory[20] = 'b00001000000000000000000000000011; // 		j loop1 (3)//instruction 6      80	**
       // doneloop1:  
       // Next instruction, uses myCPU.b2v_IDM.memory[4]
 
@@ -56,25 +53,25 @@ module testbenchBubble();
       myCPU.b2v_IDM.memory[548 >> 2] = 66;
       myCPU.b2v_IDM.memory[552 >> 2] = 121;
       myCPU.b2v_IDM.memory[556 >> 2] = 44;
-      rst_tb <= 1;  # (CLK_PERIOD);
-      rst_tb <= 0; 
+      rst <= 1;  # (CLK_PERIOD);
+      rst <= 0; 
    end
 
 
    // Generate clock
    always @*
    begin
-      clk_tb <= 1;       # (CLK_PERIOD/2);
-      clk_tb <= 0;       # (CLK_PERIOD/2);
+      clk <= 1;       # (CLK_PERIOD/2);
+      clk <= 0;       # (CLK_PERIOD/2);
    end
    
 
-  always@(posedge clk_tb)
+  always@(posedge clk)
     begin
         //////////////////////////////////////////////////
         // CHANGE PC VALUE IN THIS IF STATEMENT
         // ADD 4 TIMES THE AMOUNT OF INSTRUCTIONS YOU RUN
-        if(myCPU.b2v_PCR.Q === 92) begin
+        if(myCPU.b2v_PCR.Q === 88) begin											// **
         //////////////////////////////////////////////////
         // CHANGE THIS TEST
         // CURRENT TEST ASSUMES YOU SWAPPED THE THIRD AND SIXTH
