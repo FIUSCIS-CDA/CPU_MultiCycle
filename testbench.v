@@ -1,10 +1,13 @@
 `timescale 1ps / 1ps
 module testbench();
    reg clk, rst;
-   
+wire[31:0] PC;
+wire[31:26] OPCODE;
+wire[3:0] STATE;
+
    localparam CLK_PERIOD = 100;
    
-   CPU_MultiCycle myCPU(clk, rst);
+   CPU_MultiCycle myCPU(clk, rst, PC, OPCODE, STATE);
    
    initial begin
       // initialize instruction memory
