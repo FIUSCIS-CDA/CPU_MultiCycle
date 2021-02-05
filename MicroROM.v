@@ -2,7 +2,7 @@
 module MicroROM(state, microinstruction);
 
   input [3:0] state; 
-  reg [16:0] ROM[15:0];
+  reg [15:0] ROM[15:0];
   output wire [15:0] microinstruction;
 
   ///////////////////////////////////////////////////////
