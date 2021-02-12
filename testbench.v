@@ -1,4 +1,4 @@
-`timescale 1ps / 1ps
+//`timescale 1ps / 1ps
 module testbench();
    reg clk, rst;
 wire[31:0] PC;
