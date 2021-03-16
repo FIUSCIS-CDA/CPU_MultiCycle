@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 88 544 264 560)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "_PC[31..0]" (rect 5 0 59 12)(font "Arial" ))
+	(text "_PC[31..0]" (rect 5 0 58 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -88,7 +88,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 712 -16 888 0)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "OPCODE[31..26]" (rect 5 0 90 12)(font "Arial" ))
+	(text "OPCODE[31..26]" (rect 5 0 89 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -925,7 +925,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 1160 0 1360 256)
 	(text "CTRL" (rect 5 0 36 19)(font "Intel Clear" (font_size 8)))
-	(text "inst2" (rect 8 235 30 252)(font "Intel Clear" ))
+	(text "CTRL_UNIT" (rect 8 235 62 252)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)

@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri Feb 05 08:45:55 2021"
+// CREATED		"Tue Mar 16 10:52:29 2021"
 
 module CPU_MultiCycle(
 	clk,
@@ -102,6 +102,25 @@ SL2_32	b2v_CONSTANTSL2(
 	.O(ImmExt_times_4));
 
 
+CTRL	b2v_CTRL_UNIT(
+	.clk(clk),
+	.reset(reset),
+	.Op(Instr[31:26]),
+	.PCWrite(PCWrite),
+	.PCWriteCond(PCWriteCond),
+	.IorD(IorD),
+	.MemWrite(MemWrite),
+	.IRWrite(IRWrite),
+	.MemToReg(MemToReg),
+	.ALUSrcA(ALUSrcA),
+	.RegWrite(RegWrite),
+	.RegDst(RegDst),
+	.ALUOp(ALUOp),
+	.ALUSrcB(ALUSrcB),
+	.PCSrc(PCSrc),
+	.state(myState));
+
+
 Flopr_32	b2v_DR(
 	.reset(reset),
 	.clk(clk),
@@ -120,25 +139,6 @@ Grounder	b2v_inst(
 	.Input_To_Ground(wire_to_ground));
 
 assign	PCEn = PCWriteCond_and_Zero | PCWrite;
-
-
-CTRL	b2v_inst2(
-	.clk(clk),
-	.reset(reset),
-	.Op(Instr[31:26]),
-	.PCWrite(PCWrite),
-	.PCWriteCond(PCWriteCond),
-	.IorD(IorD),
-	.MemWrite(MemWrite),
-	.IRWrite(IRWrite),
-	.MemToReg(MemToReg),
-	.ALUSrcA(ALUSrcA),
-	.RegWrite(RegWrite),
-	.RegDst(RegDst),
-	.ALUOp(ALUOp),
-	.ALUSrcB(ALUSrcB),
-	.PCSrc(PCSrc),
-	.state(myState));
 
 assign	PCWriteCond_and_Zero = PCWriteCond & Zero;
 
