@@ -1,20 +1,21 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
-// Your use of Intel Corporation's design tools, logic functions 
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Intel Program License 
-// Subscription Agreement, the Intel Quartus Prime License Agreement,
-// the Intel FPGA IP License Agreement, or other applicable license
-// agreement, including, without limitation, that your use is for
-// the sole purpose of programming logic devices manufactured by
-// Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details.
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus II License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
 
-// PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Tue Mar 16 10:52:29 2021"
+// PROGRAM		"Quartus II 64-Bit"
+// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
+// CREATED		"Tue Mar 16 13:25:43 2021"
 
 module CPU_MultiCycle(
 	clk,
@@ -49,6 +50,7 @@ wire	IRWrite;
 wire	MemToReg;
 wire	MemWrite;
 wire	[3:0] myState;
+wire	notEqual;
 wire	[31:0] PC;
 wire	PCEn;
 wire	[31:0] PCJump;
@@ -69,6 +71,8 @@ wire	[31:0] WriteData;
 wire	[4:0] WriteRegister;
 wire	Zero;
 wire	[31:0] SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 
 
@@ -115,6 +119,7 @@ CTRL	b2v_CTRL_UNIT(
 	.ALUSrcA(ALUSrcA),
 	.RegWrite(RegWrite),
 	.RegDst(RegDst),
+	.isBNE(SYNTHESIZED_WIRE_1),
 	.ALUOp(ALUOp),
 	.ALUSrcB(ALUSrcB),
 	.PCSrc(PCSrc),
@@ -140,7 +145,16 @@ Grounder	b2v_inst(
 
 assign	PCEn = PCWriteCond_and_Zero | PCWrite;
 
-assign	PCWriteCond_and_Zero = PCWriteCond & Zero;
+
+MUX2	b2v_inst4(
+	.S(SYNTHESIZED_WIRE_1),
+	.A(Zero),
+	.B(notEqual),
+	.Y(SYNTHESIZED_WIRE_2));
+
+assign	notEqual =  ~Zero;
+
+assign	PCWriteCond_and_Zero = PCWriteCond & SYNTHESIZED_WIRE_2;
 
 
 Flopenr_32	b2v_IR(
