@@ -16,24 +16,28 @@ wire[3:0] STATE;
       /////////////////////////////////////////////////////////////
       // PUT BUBBLE SORT CODE HERE
       myCPU.b2v_IDM.memory[2] = 'b00100010001100101111111111111111; // 			addi $s2, $s1, -1				8	**
-      myCPU.b2v_IDM.memory[3] = 'b00000000000100100100000000101010; // loop1:   slt $t0, $zero, $s2            	12
-      myCPU.b2v_IDM.memory[4] = 'b00010001000000000000000000010000; // 			beq $t0, $zero, doneloop1(16)	16        
-      myCPU.b2v_IDM.memory[5] = 'b00000000000000001001100000100000; // 			add $s3, $zero, $zero			20           
-      myCPU.b2v_IDM.memory[6] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2				24
-      myCPU.b2v_IDM.memory[7] = 'b00010001001000000000000000001011; // 			beq $t1, $zero, doneloop2(11)   28      
-      myCPU.b2v_IDM.memory[8] = 'b00000010011100110101000000100000; // 			add $t2, $s3, $s3               32       
-      myCPU.b2v_IDM.memory[9] = 'b00000001010010100101000000100000; // 			add $t2, $t2, $t2               36       
-      myCPU.b2v_IDM.memory[10] = 'b00000010000010100101100000100000; // 		add $t3, $s0, $t2               40       
-      myCPU.b2v_IDM.memory[11] = 'b10001101011101000000000000000000; // 		lw $s4, 0($t3)                  44       
-      myCPU.b2v_IDM.memory[12] = 'b10001101011101010000000000000100; // 		lw $s5, 4($t3)                  48       
-      myCPU.b2v_IDM.memory[13] = 'b00000010101101000110000000101010; // 		slt $t4, $s5, $s4               52       
-      myCPU.b2v_IDM.memory[14] = 'b00010001100000000000000000000010; // 		beq $t4, $zero, doneif          56       
-      myCPU.b2v_IDM.memory[15] = 'b10101101011101010000000000000000; // 		sw $s5, 0($t3)                  60       
-      myCPU.b2v_IDM.memory[16] = 'b10101101011101000000000000000100; // 		sw $s4, 4($t3)                  64       
-      myCPU.b2v_IDM.memory[17] = 'b00100010011100110000000000000001; // doneif: addi $s3, $s2, 1                68	**
-      myCPU.b2v_IDM.memory[18] = 'b00001000000000000000000000000110; // 		j loop2 (7) //instruction 9     72	**
-      myCPU.b2v_IDM.memory[19] = 'b00100010010100101111111111111111; //doneloop2: addi $s2, $s2, -1				76	**
-      myCPU.b2v_IDM.memory[20] = 'b00001000000000000000000000000011; // 		j loop1 (3)//instruction 6      80	**
+      myCPU.b2v_IDM.memory[3] = 'b00100000000011010000000000000001; // addi $t5, $zero, 1
+      myCPU.b2v_IDM.memory[4] = 'b00000000000100100100000000101010; // loop1:   slt $t0, $zero, $s2            	12
+      myCPU.b2v_IDM.memory[5] = 'b00010001000000000000000000010000; // 			beq $t0, $zero, doneloop1(16)	16    
+      //myCPU.b2v_IDM.memory[5] = 'b00010101000011010000000000010000; // 			bne $t0, $t5, doneloop1(16)	16            
+      myCPU.b2v_IDM.memory[6] = 'b00000000000000001001100000100000; // 			add $s3, $zero, $zero			20           
+      myCPU.b2v_IDM.memory[7] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2				24
+      myCPU.b2v_IDM.memory[8] = 'b00010001001000000000000000001011; // 			beq $t1, $zero, doneloop2(11)   28      
+      //myCPU.b2v_IDM.memory[8] = 'b00010101001001010000000000001011; // 			bne $t1, $t5, doneloop2(11)   28   
+      myCPU.b2v_IDM.memory[9] = 'b00000010011100110101000000100000; // 			add $t2, $s3, $s3               32       
+      myCPU.b2v_IDM.memory[10] = 'b00000001010010100101000000100000; // 			add $t2, $t2, $t2               36       
+      myCPU.b2v_IDM.memory[11] = 'b00000010000010100101100000100000; // 		add $t3, $s0, $t2               40       
+      myCPU.b2v_IDM.memory[12] = 'b10001101011101000000000000000000; // 		lw $s4, 0($t3)                  44       
+      myCPU.b2v_IDM.memory[13] = 'b10001101011101010000000000000100; // 		lw $s5, 4($t3)                  48       
+      myCPU.b2v_IDM.memory[14] = 'b00000010101101000110000000101010; // 		slt $t4, $s5, $s4               52       
+      myCPU.b2v_IDM.memory[15] = 'b00010001100000000000000000000010; // 		beq $t4, $zero, doneif          56    
+      //myCPU.b2v_IDM.memory[15] = 'b00010101100011010000000000000010; // 		bne $t4, $t5, doneif          56          
+      myCPU.b2v_IDM.memory[16] = 'b10101101011101010000000000000000; // 		sw $s5, 0($t3)                  60       
+      myCPU.b2v_IDM.memory[17] = 'b10101101011101000000000000000100; // 		sw $s4, 4($t3)                  64       
+      myCPU.b2v_IDM.memory[18] = 'b00100010011100110000000000000001; // doneif: addi $s3, $s2, 1                68	**
+      myCPU.b2v_IDM.memory[19] = 'b00001000000000000000000000000111; // 		j loop2 (7) //instruction 9     72	**
+      myCPU.b2v_IDM.memory[20] = 'b00100010010100101111111111111111; //doneloop2: addi $s2, $s2, -1				76	**
+      myCPU.b2v_IDM.memory[21] = 'b00001000000000000000000000000011; // 		j loop1 (3)//instruction 6      80	**
       // doneloop1:  
       // Next instruction, uses myCPU.b2v_IDM.memory[4]
 
@@ -74,7 +78,7 @@ wire[3:0] STATE;
         //////////////////////////////////////////////////
         // CHANGE PC VALUE IN THIS IF STATEMENT
         // ADD 4 TIMES THE AMOUNT OF INSTRUCTIONS YOU RUN
-        if(myCPU.b2v_PCR.Q === 88) begin											// **
+        if(myCPU.b2v_PCR.Q === 92) begin											// **
         //////////////////////////////////////////////////
         // CHANGE THIS TEST
         // CURRENT TEST ASSUMES YOU SWAPPED THE THIRD AND SIXTH

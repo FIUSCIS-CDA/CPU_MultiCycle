@@ -4,138 +4,146 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 216 272)
-	(text "CTRL" (rect 5 0 36 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 235 24 252)(font "Intel Clear" ))
+	(rect 16 16 216 304)
+	(text "CTRL" (rect 5 0 40 12)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 274 25 284)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 0 0 62 12)(font "Arial" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 83 39)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "clk" (rect 21 43 37 62)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 0 0 17 12)(font "Arial" (font_size 8)))
+		(text "clk" (rect 21 43 38 55)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "reset" (rect 0 0 29 19)(font "Intel Clear" (font_size 8)))
-		(text "reset" (rect 21 59 50 78)(font "Intel Clear" (font_size 8)))
+		(text "reset" (rect 0 0 30 12)(font "Arial" (font_size 8)))
+		(text "reset" (rect 21 59 51 71)(font "Arial" (font_size 8)))
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
 		(pt 200 32)
 		(output)
-		(text "PCWrite" (rect 0 0 48 19)(font "Intel Clear" (font_size 8)))
-		(text "PCWrite" (rect 131 27 179 46)(font "Intel Clear" (font_size 8)))
+		(text "PCWrite" (rect 0 0 49 12)(font "Arial" (font_size 8)))
+		(text "PCWrite" (rect 130 27 179 39)(font "Arial" (font_size 8)))
 		(line (pt 200 32)(pt 184 32))
 	)
 	(port
 		(pt 200 48)
 		(output)
-		(text "state[3..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "state[3..0]" (rect 119 43 179 62)(font "Intel Clear" (font_size 8)))
+		(text "state[3..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "state[3..0]" (rect 120 43 179 55)(font "Arial" (font_size 8)))
 		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(port
 		(pt 200 64)
 		(output)
-		(text "PCWriteCond" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
-		(text "PCWriteCond" (rect 100 59 179 78)(font "Intel Clear" (font_size 8)))
+		(text "PCWriteCond" (rect 0 0 81 12)(font "Arial" (font_size 8)))
+		(text "PCWriteCond" (rect 98 59 179 71)(font "Arial" (font_size 8)))
 		(line (pt 200 64)(pt 184 64))
 	)
 	(port
 		(pt 200 80)
 		(output)
-		(text "IorD" (rect 0 0 24 19)(font "Intel Clear" (font_size 8)))
-		(text "IorD" (rect 155 75 179 94)(font "Intel Clear" (font_size 8)))
+		(text "IorD" (rect 0 0 25 12)(font "Arial" (font_size 8)))
+		(text "IorD" (rect 154 75 179 87)(font "Arial" (font_size 8)))
 		(line (pt 200 80)(pt 184 80))
 	)
 	(port
 		(pt 200 96)
 		(output)
-		(text "MemWrite" (rect 0 0 61 19)(font "Intel Clear" (font_size 8)))
-		(text "MemWrite" (rect 118 91 179 110)(font "Intel Clear" (font_size 8)))
+		(text "MemWrite" (rect 0 0 61 12)(font "Arial" (font_size 8)))
+		(text "MemWrite" (rect 118 91 179 103)(font "Arial" (font_size 8)))
 		(line (pt 200 96)(pt 184 96))
 	)
 	(port
 		(pt 200 112)
 		(output)
-		(text "IRWrite" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
-		(text "IRWrite" (rect 136 107 179 126)(font "Intel Clear" (font_size 8)))
+		(text "IRWrite" (rect 0 0 44 12)(font "Arial" (font_size 8)))
+		(text "IRWrite" (rect 135 107 179 119)(font "Arial" (font_size 8)))
 		(line (pt 200 112)(pt 184 112))
 	)
 	(port
 		(pt 200 128)
 		(output)
-		(text "MemToReg" (rect 0 0 67 19)(font "Intel Clear" (font_size 8)))
-		(text "MemToReg" (rect 112 123 179 142)(font "Intel Clear" (font_size 8)))
+		(text "MemToReg" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "MemToReg" (rect 110 123 179 135)(font "Arial" (font_size 8)))
 		(line (pt 200 128)(pt 184 128))
 	)
 	(port
 		(pt 200 144)
 		(output)
-		(text "PCSrc[1..0]" (rect 0 0 66 19)(font "Intel Clear" (font_size 8)))
-		(text "PCSrc[1..0]" (rect 113 139 179 158)(font "Intel Clear" (font_size 8)))
+		(text "PCSrc[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "PCSrc[1..0]" (rect 111 139 179 151)(font "Arial" (font_size 8)))
 		(line (pt 200 144)(pt 184 144)(line_width 3))
 	)
 	(port
 		(pt 200 160)
 		(output)
-		(text "ALUOp[1..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUOp[1..0]" (rect 106 155 179 174)(font "Intel Clear" (font_size 8)))
+		(text "ALUOp[1..0]" (rect 0 0 73 12)(font "Arial" (font_size 8)))
+		(text "ALUOp[1..0]" (rect 106 155 179 167)(font "Arial" (font_size 8)))
 		(line (pt 200 160)(pt 184 160)(line_width 3))
 	)
 	(port
 		(pt 200 176)
 		(output)
-		(text "ALUSrcB[1..0]" (rect 0 0 82 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUSrcB[1..0]" (rect 97 171 179 190)(font "Intel Clear" (font_size 8)))
+		(text "ALUSrcB[1..0]" (rect 0 0 83 12)(font "Arial" (font_size 8)))
+		(text "ALUSrcB[1..0]" (rect 96 171 179 183)(font "Arial" (font_size 8)))
 		(line (pt 200 176)(pt 184 176)(line_width 3))
 	)
 	(port
 		(pt 200 192)
 		(output)
-		(text "ALUSrcA" (rect 0 0 51 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUSrcA" (rect 128 187 179 206)(font "Intel Clear" (font_size 8)))
+		(text "ALUSrcA" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "ALUSrcA" (rect 123 187 179 199)(font "Arial" (font_size 8)))
 		(line (pt 200 192)(pt 184 192))
 	)
 	(port
 		(pt 200 208)
 		(output)
-		(text "RegWrite" (rect 0 0 54 19)(font "Intel Clear" (font_size 8)))
-		(text "RegWrite" (rect 125 203 179 222)(font "Intel Clear" (font_size 8)))
+		(text "RegWrite" (rect 0 0 55 12)(font "Arial" (font_size 8)))
+		(text "RegWrite" (rect 124 203 179 215)(font "Arial" (font_size 8)))
 		(line (pt 200 208)(pt 184 208))
 	)
 	(port
 		(pt 200 224)
 		(output)
-		(text "RegDst" (rect 0 0 42 19)(font "Intel Clear" (font_size 8)))
-		(text "RegDst" (rect 137 219 179 238)(font "Intel Clear" (font_size 8)))
+		(text "RegDst" (rect 0 0 44 12)(font "Arial" (font_size 8)))
+		(text "RegDst" (rect 135 219 179 231)(font "Arial" (font_size 8)))
 		(line (pt 200 224)(pt 184 224))
 	)
+	(port
+		(pt 200 240)
+		(output)
+		(text "isBNE" (rect 0 0 37 12)(font "Arial" (font_size 8)))
+		(text "isBNE" (rect 142 235 179 247)(font "Arial" (font_size 8)))
+		(line (pt 200 240)(pt 184 240))
+	)
 	(drawing
-		(rectangle (rect 16 16 184 240))
+		(rectangle (rect 16 16 184 272))
 	)
 )
