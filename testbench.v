@@ -23,7 +23,7 @@ wire[3:0] STATE;
       myCPU.b2v_IDM.memory[6] = 'b00000000000000001001100000100000; // 			add $s3, $zero, $zero			20           
       myCPU.b2v_IDM.memory[7] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2				24
       myCPU.b2v_IDM.memory[8] = 'b00010001001000000000000000001011; // 			beq $t1, $zero, doneloop2(11)   28      
-      //myCPU.b2v_IDM.memory[8] = 'b00010101001001010000000000001011; // 			bne $t1, $t5, doneloop2(11)   28   
+      //myCPU.b2v_IDM.memory[8] = 'b00010101001011010000000000001011; // 			bne $t1, $t5, doneloop2(11)   28   
       myCPU.b2v_IDM.memory[9] = 'b00000010011100110101000000100000; // 			add $t2, $s3, $s3               32       
       myCPU.b2v_IDM.memory[10] = 'b00000001010010100101000000100000; // 			add $t2, $t2, $t2               36       
       myCPU.b2v_IDM.memory[11] = 'b00000010000010100101100000100000; // 		add $t3, $s0, $t2               40       
