@@ -1,21 +1,20 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions 
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Altera Program License 
-// Subscription Agreement, the Altera Quartus II License Agreement,
-// the Altera MegaCore Function License Agreement, or other 
-// applicable license agreement, including, without limitation, 
-// that your use is for the sole purpose of programming logic 
-// devices manufactured by Altera and sold by Altera or its 
-// authorized distributors.  Please refer to the applicable 
-// agreement for further details.
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
 
-// PROGRAM		"Quartus II 64-Bit"
-// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
-// CREATED		"Tue Feb  2 07:49:17 2021"
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Thu Feb 10 12:22:55 2022"
 
 module NS3(
 	Op5,
@@ -54,10 +53,15 @@ wire	NOTOp2;
 wire	NOTOp3;
 wire	NOTOp4;
 wire	NOTOp5;
+wire	NOTOp5NOTOp4NOTOp3Op2NOTOp1Op0;
 wire	NOTS1;
 wire	NOTS2;
 wire	NOTS3;
+wire	NOTs3NOTs2NOTs1s0;
 wire	STATE1;
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 
 
@@ -66,13 +70,23 @@ assign	NOTOp5 =  ~Op5;
 
 assign	NOTOp4 =  ~Op4;
 
+assign	NOTs3NOTs2NOTs1s0 = NOTS3 & NOTS2 & S0 & NOTS1;
+
+assign	NOTOp5NOTOp4NOTOp3Op2NOTOp1Op0 = NOTOp3 & Op0 & Op2 & SYNTHESIZED_WIRE_0 & NOTOp5 & NOTOp1;
+
 assign	ADDI_or_J_or_BEQ = J | BEQ | ADDI;
 
-assign	NS3 = STATE1 & ADDI_or_J_or_BEQ;
+assign	SYNTHESIZED_WIRE_2 = NOTOp5NOTOp4NOTOp3Op2NOTOp1Op0 & NOTs3NOTs2NOTs1s0;
+
+assign	SYNTHESIZED_WIRE_1 = STATE1 & ADDI_or_J_or_BEQ;
+
+assign	NS3 = SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2;
 
 assign	ADDI = Op3 & NOTOp5 & NOTOp4 & NOTOp2 & NOTOp1 & NOTOp0;
 
 assign	STATE1 = NOTS3 & NOTS2 & NOTS1 & S0;
+
+assign	SYNTHESIZED_WIRE_0 =  ~Op4;
 
 assign	J = NOTOp3 & NOTOp5 & NOTOp4 & NOTOp2 & Op1 & NOTOp0;
 
