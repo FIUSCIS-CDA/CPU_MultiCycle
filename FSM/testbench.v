@@ -2,7 +2,9 @@
 
 
 
-
+// SET CLOCK TO 20
+// RUN (number of state changes)*20
+// CURRENTLY: 600 SHOULD BE ENOUGH
 
 
 
@@ -24,6 +26,7 @@ module testbench();
    parameter BEQ = 6'b000100;
    parameter J = 6'b000010;
    parameter ADDI = 6'b001000;
+   parameter BNE = 6'b000101;
    ///////////////////////////////////////
 
 task checkState;
@@ -58,6 +61,7 @@ endtask
    ADDRCTL[9] <= 0;
    ADDRCTL[10] <= 1;
    ADDRCTL[11] <= 0;
+   ADDRCTL[12] <= 0;
    ////////////////////////////////////////
 
 
@@ -99,6 +103,13 @@ endtask
       checkState(1);
       checkState(10);
       checkState(11);
+
+      Op <= BNE;
+      checkState(0);
+      checkState(1);
+      checkState(12);
+      
+      checkState(0);
 
       $display("All tests passed.\n");
 
