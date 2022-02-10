@@ -25,6 +25,20 @@ STATE	|	4
        NS2,  NS1  and  NS0)  and micro-instructions implemented in a MicroROM.
        Mapping from ALUOp bits to ALU inputs is done by ALUCtl.
 
+#### SUPPORTED INSTRUCTIONS
+       BNE (SP21)
+       ADDI (FA20)
+       J
+       BEQ
+       LW
+       SW
+       ADD
+       SUB
+       AND
+       OR
+       SLT
+
+
 #### AUTHOR
        Alexander T Pastoriza
        Trevor Cickovski
