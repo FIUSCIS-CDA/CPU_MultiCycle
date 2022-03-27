@@ -108,6 +108,8 @@ endtask
       checkState(0);
       checkState(1);
       checkState(12);
+
+      // Add any new tests here
       
       checkState(0);
 
