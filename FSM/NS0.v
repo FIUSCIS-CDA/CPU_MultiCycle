@@ -1,21 +1,21 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions 
-// and other software and tools, and its AMPP partner logic 
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Altera Program License 
-// Subscription Agreement, the Altera Quartus II License Agreement,
-// the Altera MegaCore Function License Agreement, or other 
-// applicable license agreement, including, without limitation, 
-// that your use is for the sole purpose of programming logic 
-// devices manufactured by Altera and sold by Altera or its 
-// authorized distributors.  Please refer to the applicable 
-// agreement for further details.
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
 
-// PROGRAM		"Quartus II 64-Bit"
-// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
-// CREATED		"Tue Feb  2 07:48:43 2021"
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// CREATED		"Tue May 17 16:09:09 2022"
 
 module NS0(
 	Op5,
@@ -44,62 +44,85 @@ input wire	S1;
 input wire	S0;
 output wire	NS0;
 
-wire	J;
-wire	J_AND_STATE1;
-wire	LW;
-wire	LW_OR_SW;
-wire	NOTOp0;
-wire	NOTOp2;
-wire	NOTOp3;
-wire	NOTOp4;
-wire	NOTOp5;
-wire	NOTS0;
-wire	NOTS1;
-wire	NOTS2;
-wire	NOTS3;
-wire	STATE1;
-wire	STATE2;
-wire	STATE2_AND_____LW_OR_SW_____;
-wire	SW;
+wire	SYNTHESIZED_WIRE_31;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_32;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_33;
+wire	SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_34;
+wire	SYNTHESIZED_WIRE_11;
+wire	SYNTHESIZED_WIRE_12;
+wire	SYNTHESIZED_WIRE_13;
+wire	SYNTHESIZED_WIRE_14;
+wire	SYNTHESIZED_WIRE_19;
+wire	SYNTHESIZED_WIRE_20;
+wire	SYNTHESIZED_WIRE_21;
+wire	SYNTHESIZED_WIRE_22;
+wire	SYNTHESIZED_WIRE_23;
+wire	SYNTHESIZED_WIRE_24;
+wire	SYNTHESIZED_WIRE_28;
+wire	SYNTHESIZED_WIRE_29;
+wire	SYNTHESIZED_WIRE_30;
 
 
 
 
-assign	NOTOp5 =  ~Op5;
+assign	SYNTHESIZED_WIRE_1 =  ~Op5;
 
-assign	NOTOp4 =  ~Op4;
+assign	SYNTHESIZED_WIRE_6 =  ~Op4;
 
-assign	STATE1 = NOTS3 & NOTS2 & NOTS1 & S0;
+assign	SYNTHESIZED_WIRE_5 = Op5 & Op0 & S1 & SYNTHESIZED_WIRE_31;
 
-assign	J_AND_STATE1 = J & STATE1;
+assign	SYNTHESIZED_WIRE_4 = SYNTHESIZED_WIRE_1 & SYNTHESIZED_WIRE_2 & SYNTHESIZED_WIRE_32 & S0;
 
-assign	LW = NOTOp3 & Op5 & NOTOp4 & NOTOp2 & Op1 & Op0;
+assign	SYNTHESIZED_WIRE_11 = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
 
-assign	NOTOp3 =  ~Op3;
+assign	SYNTHESIZED_WIRE_9 = SYNTHESIZED_WIRE_6 & SYNTHESIZED_WIRE_7 & Op1 & SYNTHESIZED_WIRE_33;
 
-assign	STATE2 = NOTS3 & NOTS2 & S1 & NOTS0;
+assign	SYNTHESIZED_WIRE_12 = SYNTHESIZED_WIRE_9 & SYNTHESIZED_WIRE_34;
 
-assign	SW = Op3 & Op5 & NOTOp4 & NOTOp2 & Op1 & Op0;
+assign	SYNTHESIZED_WIRE_14 = SYNTHESIZED_WIRE_11 & SYNTHESIZED_WIRE_12;
 
-assign	NS0 = STATE2_AND_____LW_OR_SW_____ | J_AND_STATE1;
+assign	NS0 = SYNTHESIZED_WIRE_13 | SYNTHESIZED_WIRE_14;
 
-assign	STATE2_AND_____LW_OR_SW_____ = STATE2 & LW_OR_SW;
+assign	SYNTHESIZED_WIRE_20 = SYNTHESIZED_WIRE_34 & SYNTHESIZED_WIRE_32;
 
-assign	LW_OR_SW = SW | LW;
+assign	SYNTHESIZED_WIRE_19 = S2 & S1;
 
-assign	NOTOp2 =  ~Op2;
+assign	SYNTHESIZED_WIRE_22 = SYNTHESIZED_WIRE_33 & SYNTHESIZED_WIRE_31;
 
-assign	NOTOp0 =  ~Op0;
 
-assign	NOTS3 =  ~S3;
+assign	SYNTHESIZED_WIRE_21 = SYNTHESIZED_WIRE_19 | SYNTHESIZED_WIRE_20;
 
-assign	NOTS2 =  ~S2;
+assign	SYNTHESIZED_WIRE_24 = SYNTHESIZED_WIRE_21 & SYNTHESIZED_WIRE_22;
 
-assign	NOTS1 =  ~S1;
+assign	SYNTHESIZED_WIRE_13 = SYNTHESIZED_WIRE_23 | SYNTHESIZED_WIRE_24;
 
-assign	NOTS0 =  ~S0;
+assign	SYNTHESIZED_WIRE_29 = S2 & SYNTHESIZED_WIRE_32 & S0;
 
-assign	J = NOTOp3 & NOTOp5 & NOTOp4 & NOTOp2 & Op1 & NOTOp0;
+assign	SYNTHESIZED_WIRE_30 = SYNTHESIZED_WIRE_34 & S1 & SYNTHESIZED_WIRE_31;
+
+assign	SYNTHESIZED_WIRE_23 = S3 & SYNTHESIZED_WIRE_28;
+
+assign	SYNTHESIZED_WIRE_28 = SYNTHESIZED_WIRE_29 | SYNTHESIZED_WIRE_30;
+
+assign	SYNTHESIZED_WIRE_7 =  ~Op2;
+
+assign	SYNTHESIZED_WIRE_2 =  ~Op0;
+
+assign	SYNTHESIZED_WIRE_33 =  ~S3;
+
+assign	SYNTHESIZED_WIRE_34 =  ~S2;
+
+assign	SYNTHESIZED_WIRE_32 =  ~S1;
+
+assign	SYNTHESIZED_WIRE_31 =  ~S0;
+
 
 
 endmodule
