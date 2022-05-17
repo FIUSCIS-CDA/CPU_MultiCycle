@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sun Mar 27 11:03:50 2022"
+// CREATED		"Tue May 17 19:23:10 2022"
 
 module ALUCtl(
 	ALUOp,
