@@ -197,28 +197,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 1720 664 1864 760)
-	(text "SL2_32" (rect 5 0 52 19)(font "Intel Clear" (font_size 8)))
-	(text "CONSTANTSL2" (rect 8 75 79 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "I[31..0]" (rect 0 0 42 19)(font "Intel Clear" (font_size 8)))
-		(text "I[31..0]" (rect 21 27 63 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 144 32)
-		(output)
-		(text "O[31..0]" (rect 0 0 48 19)(font "Intel Clear" (font_size 8)))
-		(text "O[31..0]" (rect 75 27 123 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 144 32)(pt 128 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 128 80))
-	)
-)
-(symbol
 	(rect 1768 376 1920 472)
 	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
 	(text "AMUX" (rect 8 75 38 92)(font "Intel Clear" ))
@@ -1122,6 +1100,28 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(fill (color 85 170 255))
 )
+(symbol
+	(rect 1720 664 1872 760)
+	(text "SL2_32" (rect 5 0 52 19)(font "Intel Clear" (font_size 8)))
+	(text "inst3" (rect 8 75 30 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "A[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 80))
+	)
+)
 (connector
 	(pt 1688 544)
 	(pt 1768 544)
@@ -1326,11 +1326,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1200 640)
 	(pt 1192 640)
-	(bus)
-)
-(connector
-	(pt 1864 696)
-	(pt 1880 696)
 	(bus)
 )
 (connector
@@ -2409,6 +2404,11 @@ https://fpgasoftware.intel.com/eula.
 	(pt 2544 416)
 	(bus)
 	(color 255 170 0)
+)
+(connector
+	(pt 1872 696)
+	(pt 1880 696)
+	(bus)
 )
 (junction (pt 968 440))
 (junction (pt 968 456))

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue May 17 18:15:48 2022"
+// CREATED		"Wed Aug 17 11:30:17 2022"
 
 module CPU_MultiCycle(
 	clk,
@@ -101,11 +101,6 @@ MUX4_32	b2v_BMUX(
 	.Y(SrcB));
 
 
-SL2_32	b2v_CONSTANTSL2(
-	.I(ImmExt),
-	.O(ImmExt_times_4));
-
-
 CTRL	b2v_CTRL_UNIT(
 	.clk(clk),
 	.reset(reset),
@@ -153,6 +148,11 @@ ALU_32	b2v_inst1(
 	.Result(ALUResult));
 
 assign	PCEn = PCWriteCond_and_Zero | PCWrite;
+
+
+SL2_32	b2v_inst3(
+	.A(ImmExt),
+	.Y(ImmExt_times_4));
 
 
 MUX2	b2v_inst4(
