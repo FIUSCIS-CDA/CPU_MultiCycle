@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 17 11:30:17 2022"
+// CREATED		"Tue Dec 20 13:55:20 2022"
 
 module CPU_MultiCycle(
 	clk,
@@ -37,7 +37,6 @@ wire	[31:0] Adr;
 wire	[4:0] ALUControl;
 wire	[1:0] ALUOp;
 wire	[31:0] ALUOut;
-wire	[31:0] ALUResult;
 wire	ALUSrcA;
 wire	[1:0] ALUSrcB;
 wire	[31:0] B;
@@ -45,6 +44,7 @@ wire	[31:0] Data;
 wire	[31:0] ImmExt;
 wire	[31:0] ImmExt_times_4;
 wire	[31:0] Instr;
+wire	[31:0] InstY;
 wire	IorD;
 wire	IRWrite;
 wire	MemToReg;
@@ -64,15 +64,31 @@ wire	[31:0] ReadData1;
 wire	[31:0] ReadData2;
 wire	RegDst;
 wire	RegWrite;
+wire	[31:0] Res;
 wire	[31:0] SrcA;
 wire	[31:0] SrcB;
 wire	wire_to_ground;
 wire	[31:0] WriteData;
 wire	[4:0] WriteRegister;
+wire	[31:0] Y;
 wire	Zero;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_8;
+wire	SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
+wire	SYNTHESIZED_WIRE_12;
+wire	SYNTHESIZED_WIRE_13;
+wire	SYNTHESIZED_WIRE_14;
+wire	SYNTHESIZED_WIRE_15;
+wire	SYNTHESIZED_WIRE_16;
 
 
 
@@ -81,7 +97,7 @@ wire	SYNTHESIZED_WIRE_2;
 Flopr_32	b2v_ALURESREG(
 	.reset(reset),
 	.clk(clk),
-	.D(ALUResult),
+	.D(InstY),
 	.Q(ALUOut));
 
 
@@ -114,7 +130,7 @@ CTRL	b2v_CTRL_UNIT(
 	.ALUSrcA(ALUSrcA),
 	.RegWrite(RegWrite),
 	.RegDst(RegDst),
-	.isBNE(SYNTHESIZED_WIRE_1),
+	.isBNE(SYNTHESIZED_WIRE_2),
 	.ALUOp(ALUOp),
 	.ALUSrcB(ALUSrcB),
 	.PCSrc(PCSrc),
@@ -145,9 +161,46 @@ ALU_32	b2v_inst1(
 	.B(SrcB),
 	.Overflow(wire_to_ground),
 	.Zero(Zero),
-	.Result(ALUResult));
+	.Result(Res));
 
 assign	PCEn = PCWriteCond_and_Zero | PCWrite;
+
+assign	SYNTHESIZED_WIRE_14 =  ~Instr[26];
+
+assign	SYNTHESIZED_WIRE_10 =  ~Instr[27];
+
+assign	SYNTHESIZED_WIRE_7 =  ~Instr[28];
+
+assign	SYNTHESIZED_WIRE_8 =  ~Instr[30];
+
+assign	SYNTHESIZED_WIRE_9 =  ~Instr[29];
+
+assign	SYNTHESIZED_WIRE_4 =  ~Instr[31];
+
+assign	SYNTHESIZED_WIRE_3 =  ~Instr[5];
+
+assign	SYNTHESIZED_WIRE_13 =  ~Instr[3];
+
+
+SLL_32	b2v_inst2(
+	.A(ReadData2),
+	.H(Instr[10:6]),
+	.Y(Y));
+
+assign	SYNTHESIZED_WIRE_5 =  ~Instr[1];
+
+assign	SYNTHESIZED_WIRE_12 =  ~Instr[4];
+
+assign	SYNTHESIZED_WIRE_6 =  ~Instr[2];
+
+assign	SYNTHESIZED_WIRE_11 =  ~Instr[0];
+
+
+MUX2_32	b2v_inst24(
+	.S(SYNTHESIZED_WIRE_1),
+	.A(Res),
+	.B(Y),
+	.Y(InstY));
 
 
 SL2_32	b2v_inst3(
@@ -156,14 +209,18 @@ SL2_32	b2v_inst3(
 
 
 MUX2	b2v_inst4(
-	.S(SYNTHESIZED_WIRE_1),
+	.S(SYNTHESIZED_WIRE_2),
 	.A(Zero),
 	.B(notEqual),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_16));
 
 assign	notEqual =  ~Zero;
 
-assign	PCWriteCond_and_Zero = PCWriteCond & SYNTHESIZED_WIRE_2;
+assign	SYNTHESIZED_WIRE_15 = SYNTHESIZED_WIRE_3 & SYNTHESIZED_WIRE_4 & SYNTHESIZED_WIRE_5 & SYNTHESIZED_WIRE_6 & SYNTHESIZED_WIRE_7 & SYNTHESIZED_WIRE_8 & SYNTHESIZED_WIRE_9 & SYNTHESIZED_WIRE_10 & SYNTHESIZED_WIRE_11 & SYNTHESIZED_WIRE_12 & SYNTHESIZED_WIRE_13 & SYNTHESIZED_WIRE_14;
+
+assign	SYNTHESIZED_WIRE_1 = SYNTHESIZED_WIRE_15 & ALUSrcA;
+
+assign	PCWriteCond_and_Zero = PCWriteCond & SYNTHESIZED_WIRE_16;
 
 
 Flopenr_32	b2v_IR(
@@ -226,7 +283,7 @@ Flopr_32	b2v_R2DR(
 
 
 MUX3_32	b2v_rightMUX(
-	.A(ALUResult),
+	.A(InstY),
 	.B(ALUOut),
 	.C(PCJump),
 	.S(PCSrc),
