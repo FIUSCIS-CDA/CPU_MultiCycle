@@ -53,11 +53,6 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name BDF_FILE CPU_MultiCycle.bdf
-set_global_assignment -name BDF_FILE FSM/FSM.bdf
-set_global_assignment -name BDF_FILE FSM/NS0.bdf
-set_global_assignment -name BDF_FILE FSM/NS1.bdf
-set_global_assignment -name BDF_FILE FSM/NS2.bdf
-set_global_assignment -name BDF_FILE FSM/NS3.bdf
 set_global_assignment -name VERILOG_FILE MicroROM.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
@@ -96,4 +91,39 @@ set_global_assignment -name VERILOG_FILE ../DM/DM_asynch.v
 set_global_assignment -name BDF_FILE ../Grounder/Grounder.bdf
 set_global_assignment -name BDF_FILE ../SLL_32/SLL_32.bdf
 
+
+set_global_assignment -name BDF_FILE FSM/Instructions/ADD.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/ADDI.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/ANDD.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/BEQ.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/BNE.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/J.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/LW.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/MFLO.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/MULT.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/ORR.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/RTYPE.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/SLL.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/SLT.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/SLTI.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/SUB.bdf
+set_global_assignment -name BDF_FILE FSM/Instructions/SW.bdf
+set_global_assignment -name BDF_FILE FSM/States/S0.bdf
+set_global_assignment -name BDF_FILE FSM/States/S1.bdf
+set_global_assignment -name BDF_FILE FSM/States/S2.bdf
+set_global_assignment -name BDF_FILE FSM/States/S3.bdf
+set_global_assignment -name BDF_FILE FSM/States/S4.bdf
+set_global_assignment -name BDF_FILE FSM/States/S5.bdf
+set_global_assignment -name BDF_FILE FSM/States/S6.bdf
+set_global_assignment -name BDF_FILE FSM/States/S7.bdf
+set_global_assignment -name BDF_FILE FSM/States/S8.bdf
+set_global_assignment -name BDF_FILE FSM/States/S9.bdf
+set_global_assignment -name BDF_FILE FSM/States/S10.bdf
+set_global_assignment -name BDF_FILE FSM/States/S11.bdf
+set_global_assignment -name BDF_FILE FSM/States/S12.bdf
+set_global_assignment -name BDF_FILE FSM/States/S13.bdf
+set_global_assignment -name BDF_FILE FSM/States/S14.bdf
+set_global_assignment -name BDF_FILE FSM/States/S15.bdf
+set_global_assignment -name BDF_FILE FSM/FSM.bdf
+set_global_assignment -name BDF_FILE ../Encoder_32/Encoder_32.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

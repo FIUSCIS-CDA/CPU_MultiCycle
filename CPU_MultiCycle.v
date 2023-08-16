@@ -15,12 +15,14 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Dec 20 13:55:20 2022"
+// CREATED		"Wed Aug 16 10:35:27 2023"
 
 module CPU_MultiCycle(
 	clk,
 	reset,
+	Overflow,
 	_PC,
+	FUNCTCODE,
 	OPCODE,
 	state
 );
@@ -28,29 +30,36 @@ module CPU_MultiCycle(
 
 input wire	clk;
 input wire	reset;
+output wire	Overflow;
 output wire	[31:0] _PC;
+output wire	[31:26] FUNCTCODE;
 output wire	[31:26] OPCODE;
-output wire	[3:0] state;
+output wire	[4:0] state;
 
 wire	[31:0] A;
 wire	[31:0] Adr;
-wire	[4:0] ALUControl;
 wire	[1:0] ALUOp;
 wire	[31:0] ALUOut;
+wire	[31:0] ALUResult;
 wire	ALUSrcA;
 wire	[1:0] ALUSrcB;
+wire	ANDoutput;
 wire	[31:0] B;
 wire	[31:0] Data;
 wire	[31:0] ImmExt;
 wire	[31:0] ImmExt_times_4;
 wire	[31:0] Instr;
-wire	[31:0] InstY;
 wire	IorD;
 wire	IRWrite;
-wire	MemToReg;
+wire	isBNE;
+wire	isZero;
+wire	[31:0] LOval;
+wire	LOwrite;
+wire	[1:0] MemToReg;
 wire	MemWrite;
-wire	[3:0] myState;
+wire	[4:0] myState;
 wire	notEqual;
+wire	OV;
 wire	[31:0] PC;
 wire	PCEn;
 wire	[31:0] PCJump;
@@ -58,37 +67,18 @@ wire	[31:0] PCPrime;
 wire	[1:0] PCSrc;
 wire	PCWrite;
 wire	PCWriteCond;
-wire	PCWriteCond_and_Zero;
-wire	[31:0] ReadDat;
+wire	[31:0] RD;
 wire	[31:0] ReadData1;
 wire	[31:0] ReadData2;
 wire	RegDst;
 wire	RegWrite;
-wire	[31:0] Res;
 wire	[31:0] SrcA;
 wire	[31:0] SrcB;
-wire	wire_to_ground;
 wire	[31:0] WriteData;
 wire	[4:0] WriteRegister;
-wire	[31:0] Y;
-wire	Zero;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
-wire	SYNTHESIZED_WIRE_2;
-wire	SYNTHESIZED_WIRE_3;
-wire	SYNTHESIZED_WIRE_4;
-wire	SYNTHESIZED_WIRE_5;
-wire	SYNTHESIZED_WIRE_6;
-wire	SYNTHESIZED_WIRE_7;
-wire	SYNTHESIZED_WIRE_8;
-wire	SYNTHESIZED_WIRE_9;
-wire	SYNTHESIZED_WIRE_10;
-wire	SYNTHESIZED_WIRE_11;
-wire	SYNTHESIZED_WIRE_12;
-wire	SYNTHESIZED_WIRE_13;
-wire	SYNTHESIZED_WIRE_14;
-wire	SYNTHESIZED_WIRE_15;
-wire	SYNTHESIZED_WIRE_16;
+wire	[6:0] SYNTHESIZED_WIRE_2;
 
 
 
@@ -97,7 +87,7 @@ wire	SYNTHESIZED_WIRE_16;
 Flopr_32	b2v_ALURESREG(
 	.reset(reset),
 	.clk(clk),
-	.D(InstY),
+	.D(ALUResult),
 	.Q(ALUOut));
 
 
@@ -117,30 +107,10 @@ MUX4_32	b2v_BMUX(
 	.Y(SrcB));
 
 
-CTRL	b2v_CTRL_UNIT(
-	.clk(clk),
-	.reset(reset),
-	.Op(Instr[31:26]),
-	.PCWrite(PCWrite),
-	.PCWriteCond(PCWriteCond),
-	.IorD(IorD),
-	.MemWrite(MemWrite),
-	.IRWrite(IRWrite),
-	.MemToReg(MemToReg),
-	.ALUSrcA(ALUSrcA),
-	.RegWrite(RegWrite),
-	.RegDst(RegDst),
-	.isBNE(SYNTHESIZED_WIRE_2),
-	.ALUOp(ALUOp),
-	.ALUSrcB(ALUSrcB),
-	.PCSrc(PCSrc),
-	.state(myState));
-
-
 Flopr_32	b2v_DR(
 	.reset(reset),
 	.clk(clk),
-	.D(ReadDat),
+	.D(RD),
 	.Q(Data));
 
 
@@ -148,59 +118,31 @@ DM_asynch	b2v_IDM(
 	.we(MemWrite),
 	.a(Adr),
 	.wd(SrcB),
-	.rd(ReadDat));
+	.rd(RD));
+
+assign	PCEn = ANDoutput | PCWrite;
 
 
-Grounder	b2v_inst(
-	.Input_To_Ground(wire_to_ground));
-
-
-ALU_32	b2v_inst1(
-	.A(SrcA),
-	.alu_op(ALUControl),
-	.B(SrcB),
-	.Overflow(wire_to_ground),
-	.Zero(Zero),
-	.Result(Res));
-
-assign	PCEn = PCWriteCond_and_Zero | PCWrite;
-
-assign	SYNTHESIZED_WIRE_14 =  ~Instr[26];
-
-assign	SYNTHESIZED_WIRE_10 =  ~Instr[27];
-
-assign	SYNTHESIZED_WIRE_7 =  ~Instr[28];
-
-assign	SYNTHESIZED_WIRE_8 =  ~Instr[30];
-
-assign	SYNTHESIZED_WIRE_9 =  ~Instr[29];
-
-assign	SYNTHESIZED_WIRE_4 =  ~Instr[31];
-
-assign	SYNTHESIZED_WIRE_3 =  ~Instr[5];
-
-assign	SYNTHESIZED_WIRE_13 =  ~Instr[3];
-
-
-SLL_32	b2v_inst2(
-	.A(ReadData2),
-	.H(Instr[10:6]),
-	.Y(Y));
-
-assign	SYNTHESIZED_WIRE_5 =  ~Instr[1];
-
-assign	SYNTHESIZED_WIRE_12 =  ~Instr[4];
-
-assign	SYNTHESIZED_WIRE_6 =  ~Instr[2];
-
-assign	SYNTHESIZED_WIRE_11 =  ~Instr[0];
-
-
-MUX2_32	b2v_inst24(
-	.S(SYNTHESIZED_WIRE_1),
-	.A(Res),
-	.B(Y),
-	.Y(InstY));
+CTRL	b2v_inst11(
+	.clk(clk),
+	.reset(reset),
+	.Funct(Instr[5:0]),
+	.Op(Instr[31:26]),
+	.PCWrite(PCWrite),
+	.PCWriteCond(PCWriteCond),
+	.IorD(IorD),
+	.MemWrite(MemWrite),
+	.IRWrite(IRWrite),
+	.ALUSrcA(ALUSrcA),
+	.RegWrite(RegWrite),
+	.RegDst(RegDst),
+	.isBNE(isBNE),
+	.LOWrite(LOwrite),
+	.ALUOp(ALUOp),
+	.ALUSrcB(ALUSrcB),
+	.MemToReg(MemToReg),
+	.PCSrc(PCSrc),
+	.state(myState));
 
 
 SL2_32	b2v_inst3(
@@ -209,32 +151,46 @@ SL2_32	b2v_inst3(
 
 
 MUX2	b2v_inst4(
-	.S(SYNTHESIZED_WIRE_2),
-	.A(Zero),
+	.S(isBNE),
+	.A(isZero),
 	.B(notEqual),
-	.Y(SYNTHESIZED_WIRE_16));
+	.Y(SYNTHESIZED_WIRE_1));
 
-assign	notEqual =  ~Zero;
+assign	notEqual =  ~isZero;
 
-assign	SYNTHESIZED_WIRE_15 = SYNTHESIZED_WIRE_3 & SYNTHESIZED_WIRE_4 & SYNTHESIZED_WIRE_5 & SYNTHESIZED_WIRE_6 & SYNTHESIZED_WIRE_7 & SYNTHESIZED_WIRE_8 & SYNTHESIZED_WIRE_9 & SYNTHESIZED_WIRE_10 & SYNTHESIZED_WIRE_11 & SYNTHESIZED_WIRE_12 & SYNTHESIZED_WIRE_13 & SYNTHESIZED_WIRE_14;
-
-assign	SYNTHESIZED_WIRE_1 = SYNTHESIZED_WIRE_15 & ALUSrcA;
-
-assign	PCWriteCond_and_Zero = PCWriteCond & SYNTHESIZED_WIRE_16;
+assign	ANDoutput = PCWriteCond & SYNTHESIZED_WIRE_1;
 
 
 Flopenr_32	b2v_IR(
 	.reset(reset),
 	.clk(clk),
 	.E(IRWrite),
-	.D(ReadDat),
+	.D(RD),
 	.Q(Instr));
+
+
+Flopenr_32	b2v_LO(
+	.reset(reset),
+	.clk(clk),
+	.E(LOwrite),
+	.D(ALUOut),
+	.Q(LOval));
+
+
+ALU_32	b2v_MYALU(
+	.A(SrcA),
+	.alu_op(SYNTHESIZED_WIRE_2),
+	.B(SrcB),
+	.H(Instr[10:6]),
+	.Overflow(OV),
+	.Zero(isZero),
+	.Result(ALUResult));
 
 
 ALUCtl	b2v_myALUCtl(
 	.ALUOp(ALUOp),
 	.F(Instr[5:0]),
-	.ALUControl(ALUControl));
+	.ALUControl(SYNTHESIZED_WIRE_2));
 
 
 RF	b2v_myRF(
@@ -283,7 +239,7 @@ Flopr_32	b2v_R2DR(
 
 
 MUX3_32	b2v_rightMUX(
-	.A(InstY),
+	.A(ALUResult),
 	.B(ALUOut),
 	.C(PCJump),
 	.S(PCSrc),
@@ -308,13 +264,16 @@ MUX2_5	b2v_WAMUX(
 	.Y(WriteRegister));
 
 
-MUX2_32	b2v_WDMUX(
-	.S(MemToReg),
+MUX3_32	b2v_WDMUX(
 	.A(ALUOut),
 	.B(Data),
+	.C(LOval),
+	.S(MemToReg),
 	.Y(WriteData));
 
+assign	Overflow = OV;
 assign	_PC = PC;
+assign	FUNCTCODE[31:26] = Instr[5:0];
 assign	OPCODE[31:26] = Instr[31:26];
 assign	state = myState;
 
