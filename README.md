@@ -26,6 +26,8 @@ STATE	|	4
        Mapping from ALUOp bits to ALU inputs is done by ALUCtl.
 
 #### SUPPORTED INSTRUCTIONS
+       MFLO (SP23)
+       MULT (SP23)
        SLL (FA22)
        SLTI (SP22)
        BNE (SP21)
