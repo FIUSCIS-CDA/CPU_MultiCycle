@@ -15,77 +15,393 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Mon Aug 15 11:16:41 2022"
+// CREATED		"Wed Aug 16 09:56:59 2023"
 
 module FSM(
-	addrctl,
 	clk,
 	reset,
+	Funct,
 	Op,
 	NS
 );
 
 
-input wire	addrctl;
 input wire	clk;
 input wire	reset;
+input wire	[5:0] Funct;
 input wire	[5:0] Op;
-output wire	[3:0] NS;
+output wire	[4:0] NS;
 
-wire	FSM_NS0;
-wire	FSM_NS1;
-wire	FSM_NS2;
-wire	FSM_NS3;
 wire	notRESET;
 wire	NS0beforeFF;
-wire	NS0MUXout;
 wire	NS1beforeFF;
-wire	NS1MUXout;
 wire	NS2beforeFF;
-wire	NS2MUXout;
 wire	NS3beforeFF;
-wire	NS3MUXout;
-reg	[3:0] NS_ALTERA_SYNTHESIZED;
+wire	NS4beforeFF;
+reg	[4:0] NS_ALTERA_SYNTHESIZED;
 wire	Power;
-wire	Splusone0;
-wire	Splusone1;
-wire	Splusone2;
-wire	Splusone3;
+wire	[4:0] Q;
+wire	State0;
+wire	State1;
+wire	State10;
+wire	State11;
+wire	State12;
+wire	State13;
+wire	State14;
+wire	State15;
+wire	State2;
+wire	State3;
+wire	State4;
+wire	State5;
+wire	State6;
+wire	State7;
+wire	State8;
+wire	State9;
+wire	SYNTHESIZED_WIRE_62;
+wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_17;
+wire	SYNTHESIZED_WIRE_18;
+wire	SYNTHESIZED_WIRE_19;
+wire	SYNTHESIZED_WIRE_20;
+wire	SYNTHESIZED_WIRE_21;
+wire	SYNTHESIZED_WIRE_22;
+wire	SYNTHESIZED_WIRE_23;
+wire	SYNTHESIZED_WIRE_24;
+wire	SYNTHESIZED_WIRE_25;
+wire	SYNTHESIZED_WIRE_26;
+wire	SYNTHESIZED_WIRE_27;
+wire	SYNTHESIZED_WIRE_28;
+wire	SYNTHESIZED_WIRE_29;
+wire	SYNTHESIZED_WIRE_30;
+wire	SYNTHESIZED_WIRE_31;
+wire	SYNTHESIZED_WIRE_32;
+wire	SYNTHESIZED_WIRE_33;
+wire	SYNTHESIZED_WIRE_34;
+wire	SYNTHESIZED_WIRE_35;
+wire	SYNTHESIZED_WIRE_36;
+wire	SYNTHESIZED_WIRE_37;
+wire	SYNTHESIZED_WIRE_38;
+wire	SYNTHESIZED_WIRE_39;
+wire	SYNTHESIZED_WIRE_40;
+wire	SYNTHESIZED_WIRE_41;
+wire	SYNTHESIZED_WIRE_42;
+wire	SYNTHESIZED_WIRE_43;
+wire	SYNTHESIZED_WIRE_44;
+wire	SYNTHESIZED_WIRE_45;
+wire	SYNTHESIZED_WIRE_46;
+wire	SYNTHESIZED_WIRE_47;
+wire	SYNTHESIZED_WIRE_48;
+wire	SYNTHESIZED_WIRE_49;
+wire	SYNTHESIZED_WIRE_63;
+wire	SYNTHESIZED_WIRE_51;
+wire	SYNTHESIZED_WIRE_52;
+wire	SYNTHESIZED_WIRE_54;
+wire	SYNTHESIZED_WIRE_55;
+wire	SYNTHESIZED_WIRE_56;
+wire	SYNTHESIZED_WIRE_58;
+wire	SYNTHESIZED_WIRE_59;
+wire	SYNTHESIZED_WIRE_60;
+wire	SYNTHESIZED_WIRE_61;
+
+assign	SYNTHESIZED_WIRE_62 = 0;
+assign	SYNTHESIZED_WIRE_63 = 1;
 
 
 
 
-
-INC4	b2v_addOne(
-	.A3(NS_ALTERA_SYNTHESIZED[3]),
-	.A2(NS_ALTERA_SYNTHESIZED[2]),
-	.A1(NS_ALTERA_SYNTHESIZED[1]),
-	.A0(NS_ALTERA_SYNTHESIZED[0]),
-	.S3(Splusone3),
-	.S2(Splusone2),
-	.S1(Splusone1),
-	.S0(Splusone0));
+Encoder_32	b2v_inst(
+	.A0(State0),
+	.A1(State1),
+	.A2(State2),
+	.A3(State3),
+	.A4(State4),
+	.A5(State5),
+	.A6(State6),
+	.A7(State7),
+	.A8(State8),
+	.A9(State9),
+	.A10(State10),
+	.A11(State11),
+	.A12(State12),
+	.A13(State13),
+	.A14(State14),
+	.A15(State15),
+	.A16(SYNTHESIZED_WIRE_62),
+	.A17(SYNTHESIZED_WIRE_62),
+	.A18(SYNTHESIZED_WIRE_62),
+	.A19(SYNTHESIZED_WIRE_62),
+	.A20(SYNTHESIZED_WIRE_62),
+	.A21(SYNTHESIZED_WIRE_62),
+	.A22(SYNTHESIZED_WIRE_62),
+	.A23(SYNTHESIZED_WIRE_62),
+	.A24(SYNTHESIZED_WIRE_62),
+	.A25(SYNTHESIZED_WIRE_62),
+	.A26(SYNTHESIZED_WIRE_62),
+	.A27(SYNTHESIZED_WIRE_62),
+	.A28(SYNTHESIZED_WIRE_62),
+	.A29(SYNTHESIZED_WIRE_62),
+	.A30(SYNTHESIZED_WIRE_62),
+	.A31(SYNTHESIZED_WIRE_62),
+	.Q(Q));
 
 assign	notRESET =  ~reset;
 
 
+S2	b2v_inst10(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_16));
 
-always@(posedge clk or negedge Power or negedge Power)
-begin
-if (!Power)
-	begin
-	NS_ALTERA_SYNTHESIZED[3] <= 0;
-	end
-else
-if (!Power)
-	begin
-	NS_ALTERA_SYNTHESIZED[3] <= 1;
-	end
-else
-	begin
-	NS_ALTERA_SYNTHESIZED[3] <= NS3beforeFF;
-	end
-end
+
+LW	b2v_inst11(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_17));
+
+assign	State3 = SYNTHESIZED_WIRE_16 & SYNTHESIZED_WIRE_17;
+
+
+S3	b2v_inst13(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(State4));
+
+
+S2	b2v_inst14(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_18));
+
+
+SW	b2v_inst15(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_19));
+
+assign	State5 = SYNTHESIZED_WIRE_18 & SYNTHESIZED_WIRE_19;
+
+
+S1	b2v_inst17(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_20));
+
+
+RTYPE	b2v_inst18(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_21));
+
+assign	State6 = SYNTHESIZED_WIRE_20 & SYNTHESIZED_WIRE_21;
+
+
+S6	b2v_inst20(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_28));
+
+
+ADD	b2v_inst21(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_22));
+
+
+ANDD	b2v_inst22(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_24));
+
+
+ORR	b2v_inst23(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_23));
+
+
+SLL	b2v_inst24(
+	.Functcode(Funct),
+	.Opcode(Op),
+	.Y(SYNTHESIZED_WIRE_25));
+
+
+SLT	b2v_inst25(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_26));
+
+
+SUB	b2v_inst26(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_27));
+
+assign	SYNTHESIZED_WIRE_29 = SYNTHESIZED_WIRE_22 | SYNTHESIZED_WIRE_23 | SYNTHESIZED_WIRE_24 | SYNTHESIZED_WIRE_25 | SYNTHESIZED_WIRE_26 | SYNTHESIZED_WIRE_27;
+
+assign	State7 = SYNTHESIZED_WIRE_28 & SYNTHESIZED_WIRE_29;
+
+
+S1	b2v_inst29(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_30));
+
+
+S0	b2v_inst3(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(State1));
+
+
+BEQ	b2v_inst30(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_31));
+
+assign	State8 = SYNTHESIZED_WIRE_30 & SYNTHESIZED_WIRE_31;
+
+
+S1	b2v_inst32(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_32));
+
+
+J	b2v_inst33(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_33));
+
+assign	State9 = SYNTHESIZED_WIRE_32 & SYNTHESIZED_WIRE_33;
+
+
+S1	b2v_inst35(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_34));
+
+
+ADDI	b2v_inst36(
+	.Op(Op),
+	.addi_output(SYNTHESIZED_WIRE_35));
+
+assign	State10 = SYNTHESIZED_WIRE_34 & SYNTHESIZED_WIRE_35;
+
+
+S10	b2v_inst38(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_37));
+
+
+S13	b2v_inst39(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_36));
+
+
+assign	State11 = SYNTHESIZED_WIRE_36 | SYNTHESIZED_WIRE_37;
+
+
+S1	b2v_inst41(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_38));
+
+
+BNE	b2v_inst42(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_39));
+
+assign	State12 = SYNTHESIZED_WIRE_38 & SYNTHESIZED_WIRE_39;
+
+
+S1	b2v_inst44(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_40));
+
+
+SLTI	b2v_inst45(
+	.Op(Op),
+	.slti_output(SYNTHESIZED_WIRE_41));
+
+assign	State13 = SYNTHESIZED_WIRE_40 & SYNTHESIZED_WIRE_41;
+
+
+S6	b2v_inst47(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_42));
+
+assign	State14 = SYNTHESIZED_WIRE_42 & SYNTHESIZED_WIRE_43;
+
+
+MULT	b2v_inst49(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_43));
+
+
+S1	b2v_inst5(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_60));
+
+
+S6	b2v_inst50(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_44));
+
+
+MFLO	b2v_inst51(
+	.Funct(Funct),
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_45));
+
+assign	State15 = SYNTHESIZED_WIRE_44 & SYNTHESIZED_WIRE_45;
+
+
+S4	b2v_inst53(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_54));
+
+
+S5	b2v_inst54(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_48));
+
+
+S7	b2v_inst55(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_49));
+
+
+S8	b2v_inst56(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_56));
+
+
+S9	b2v_inst57(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_55));
+
+
+S11	b2v_inst58(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_46));
+
+
+S12	b2v_inst59(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_47));
+
+
+LW	b2v_inst6(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_59));
+
+
+S14	b2v_inst60(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_51));
+
+
+S15	b2v_inst61(
+	.S(NS_ALTERA_SYNTHESIZED),
+	.Y(SYNTHESIZED_WIRE_52));
+
+assign	State0 = SYNTHESIZED_WIRE_46 & SYNTHESIZED_WIRE_47 & SYNTHESIZED_WIRE_48 & SYNTHESIZED_WIRE_49 & SYNTHESIZED_WIRE_63 & SYNTHESIZED_WIRE_51 & SYNTHESIZED_WIRE_52 & SYNTHESIZED_WIRE_63 & SYNTHESIZED_WIRE_54 & SYNTHESIZED_WIRE_55 & SYNTHESIZED_WIRE_56 & SYNTHESIZED_WIRE_63;
+
+
+
+assign	NS3beforeFF = notRESET & Q[3];
+
+assign	NS2beforeFF = notRESET & Q[2];
+
+assign	NS1beforeFF = notRESET & Q[1];
+
+assign	NS0beforeFF = notRESET & Q[0];
 
 
 always@(posedge clk or negedge Power or negedge Power)
@@ -102,6 +418,29 @@ if (!Power)
 else
 	begin
 	NS_ALTERA_SYNTHESIZED[0] <= NS0beforeFF;
+	end
+end
+
+
+SW	b2v_inst7(
+	.Op(Op),
+	.Y(SYNTHESIZED_WIRE_58));
+
+
+always@(posedge clk or negedge Power or negedge Power)
+begin
+if (!Power)
+	begin
+	NS_ALTERA_SYNTHESIZED[3] <= 0;
+	end
+else
+if (!Power)
+	begin
+	NS_ALTERA_SYNTHESIZED[3] <= 1;
+	end
+else
+	begin
+	NS_ALTERA_SYNTHESIZED[3] <= NS3beforeFF;
 	end
 end
 
@@ -141,97 +480,29 @@ else
 	end
 end
 
-assign	NS3beforeFF = notRESET & NS3MUXout;
-
-assign	NS2beforeFF = notRESET & NS2MUXout;
-
-assign	NS1beforeFF = notRESET & NS1MUXout;
-
-assign	NS0beforeFF = notRESET & NS0MUXout;
+assign	NS4beforeFF = notRESET & Q[4];
 
 
-NS0	b2v_myNS0(
-	.Op5(Op[5]),
-	.Op4(Op[4]),
-	.Op3(Op[3]),
-	.Op2(Op[2]),
-	.Op1(Op[1]),
-	.Op0(Op[0]),
-	.S3(NS_ALTERA_SYNTHESIZED[3]),
-	.S2(NS_ALTERA_SYNTHESIZED[2]),
-	.S1(NS_ALTERA_SYNTHESIZED[1]),
-	.S0(NS_ALTERA_SYNTHESIZED[0]),
-	.NS0(FSM_NS0));
+always@(posedge clk or negedge Power or negedge Power)
+begin
+if (!Power)
+	begin
+	NS_ALTERA_SYNTHESIZED[4] <= 0;
+	end
+else
+if (!Power)
+	begin
+	NS_ALTERA_SYNTHESIZED[4] <= 1;
+	end
+else
+	begin
+	NS_ALTERA_SYNTHESIZED[4] <= NS4beforeFF;
+	end
+end
 
+assign	SYNTHESIZED_WIRE_61 = SYNTHESIZED_WIRE_58 | SYNTHESIZED_WIRE_59;
 
-NS1	b2v_myNS1(
-	.Op5(Op[5]),
-	.Op4(Op[4]),
-	.Op3(Op[3]),
-	.Op2(Op[2]),
-	.Op1(Op[1]),
-	.Op0(Op[0]),
-	.S3(NS_ALTERA_SYNTHESIZED[3]),
-	.S2(NS_ALTERA_SYNTHESIZED[2]),
-	.S1(NS_ALTERA_SYNTHESIZED[1]),
-	.S0(NS_ALTERA_SYNTHESIZED[0]),
-	.NS1(FSM_NS1));
-
-
-NS2	b2v_myNS2(
-	.Op5(Op[5]),
-	.Op4(Op[4]),
-	.Op3(Op[3]),
-	.Op2(Op[2]),
-	.Op1(Op[1]),
-	.Op0(Op[0]),
-	.S3(NS_ALTERA_SYNTHESIZED[3]),
-	.S2(NS_ALTERA_SYNTHESIZED[2]),
-	.S1(NS_ALTERA_SYNTHESIZED[1]),
-	.S0(NS_ALTERA_SYNTHESIZED[0]),
-	.NS2(FSM_NS2));
-
-
-NS3	b2v_myNS3(
-	.Op5(Op[5]),
-	.Op4(Op[4]),
-	.Op3(Op[3]),
-	.Op2(Op[2]),
-	.Op1(Op[1]),
-	.Op0(Op[0]),
-	.S3(NS_ALTERA_SYNTHESIZED[3]),
-	.S2(NS_ALTERA_SYNTHESIZED[2]),
-	.S1(NS_ALTERA_SYNTHESIZED[1]),
-	.S0(NS_ALTERA_SYNTHESIZED[0]),
-	.NS3(FSM_NS3));
-
-
-MUX2	b2v_NS0MUX(
-	.S(addrctl),
-	.A(FSM_NS0),
-	.B(Splusone0),
-	.Y(NS0MUXout));
-
-
-MUX2	b2v_NS1MUX(
-	.S(addrctl),
-	.A(FSM_NS1),
-	.B(Splusone1),
-	.Y(NS1MUXout));
-
-
-MUX2	b2v_NS2MUX(
-	.S(addrctl),
-	.A(FSM_NS2),
-	.B(Splusone2),
-	.Y(NS2MUXout));
-
-
-MUX2	b2v_NS3MUX(
-	.S(addrctl),
-	.A(FSM_NS3),
-	.B(Splusone3),
-	.Y(NS3MUXout));
+assign	State2 = SYNTHESIZED_WIRE_60 & SYNTHESIZED_WIRE_61;
 
 assign	NS = NS_ALTERA_SYNTHESIZED;
 assign	Power = 1;
