@@ -15,24 +15,26 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue May 17 19:23:19 2022"
+// CREATED		"Wed Aug 16 09:57:21 2023"
 
 module CTRL(
 	reset,
 	clk,
+	Funct,
 	Op,
 	RegDst,
 	RegWrite,
 	ALUSrcA,
-	MemToReg,
 	IRWrite,
 	MemWrite,
 	IorD,
 	PCWriteCond,
 	PCWrite,
 	isBNE,
+	LOWrite,
 	ALUOp,
 	ALUSrcB,
+	MemToReg,
 	PCSrc,
 	state
 );
@@ -40,28 +42,30 @@ module CTRL(
 
 input wire	reset;
 input wire	clk;
+input wire	[5:0] Funct;
 input wire	[31:26] Op;
 output wire	RegDst;
 output wire	RegWrite;
 output wire	ALUSrcA;
-output wire	MemToReg;
 output wire	IRWrite;
 output wire	MemWrite;
 output wire	IorD;
 output wire	PCWriteCond;
 output wire	PCWrite;
 output wire	isBNE;
+output wire	LOWrite;
 output wire	[1:0] ALUOp;
 output wire	[1:0] ALUSrcB;
+output wire	[1:0] MemToReg;
 output wire	[1:0] PCSrc;
-output wire	[3:0] state;
+output wire	[4:0] state;
 
-wire	addrctl;
 wire	[1:0] ALUOp_ALTERA_SYNTHESIZED;
 wire	[1:0] ALUSrcB_ALTERA_SYNTHESIZED;
-wire	[16:0] microinstruction;
+wire	[1:0] MemToReg_ALTERA_SYNTHESIZED;
+wire	[17:0] microinstruction;
 wire	[1:0] PCSrc_ALTERA_SYNTHESIZED;
-wire	[3:0] SYNTHESIZED_WIRE_0;
+wire	[4:0] SYNTHESIZED_WIRE_0;
 
 assign	state = SYNTHESIZED_WIRE_0;
 
@@ -73,17 +77,12 @@ MicroROM	b2v_inst(
 	.microinstruction(microinstruction));
 
 
-FSM	b2v_myFSM(
+FSM	b2v_inst1(
 	.clk(clk),
 	.reset(reset),
-	.addrctl(addrctl),
+	.Funct(Funct),
 	.Op(Op),
 	.NS(SYNTHESIZED_WIRE_0));
-
-
-SameBit	b2v_sameBitUnit00(
-	.Ain(microinstruction[0]),
-	.Aout(addrctl));
 
 
 SameBit	b2v_sameBitUnit02(
@@ -133,40 +132,51 @@ SameBit	b2v_sameBitUnit10(
 
 SameBit	b2v_sameBitUnit11(
 	.Ain(microinstruction[11]),
-	.Aout(MemToReg));
+	.Aout(MemToReg_ALTERA_SYNTHESIZED[0]));
 
 
 SameBit	b2v_sameBitUnit12(
-	.Ain(microinstruction[12]),
+	.Ain(microinstruction[13]),
 	.Aout(IRWrite));
 
 
 SameBit	b2v_sameBitUnit13(
-	.Ain(microinstruction[13]),
+	.Ain(microinstruction[14]),
 	.Aout(MemWrite));
 
 
 SameBit	b2v_sameBitUnit14(
-	.Ain(microinstruction[14]),
+	.Ain(microinstruction[15]),
 	.Aout(IorD));
 
 
 SameBit	b2v_sameBitUnit15(
-	.Ain(microinstruction[15]),
+	.Ain(microinstruction[16]),
 	.Aout(PCWriteCond));
 
 
 SameBit	b2v_sameBitUnit16(
-	.Ain(microinstruction[16]),
+	.Ain(microinstruction[17]),
 	.Aout(PCWrite));
+
+
+SameBit	b2v_sameBitUnit17(
+	.Ain(microinstruction[12]),
+	.Aout(MemToReg_ALTERA_SYNTHESIZED[1]));
 
 
 SameBit	b2v_sameBitUnit2(
 	.Ain(microinstruction[1]),
 	.Aout(isBNE));
 
+
+SameBit	b2v_sameBitUnit4(
+	.Ain(microinstruction[0]),
+	.Aout(LOWrite));
+
 assign	ALUOp = ALUOp_ALTERA_SYNTHESIZED;
 assign	ALUSrcB = ALUSrcB_ALTERA_SYNTHESIZED;
+assign	MemToReg = MemToReg_ALTERA_SYNTHESIZED;
 assign	PCSrc = PCSrc_ALTERA_SYNTHESIZED;
 
 endmodule
