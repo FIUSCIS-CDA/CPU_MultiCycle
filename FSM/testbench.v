@@ -13,13 +13,13 @@ module testbench();
 ///////////////////////////////////////////////////////////////////////////////////
 // Inputs: clk, reset, addrctl (1-bit), Opcode (6-bit)
    reg clk, rst;
-   reg addrctl;
-   reg[15:0] ADDRCTL;
+   //reg[15:0] ADDRCTL;
    reg[5:0] Op;
+   reg[5:0] Funct;
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 // Output: Next State (NS, 4-bit)
-   wire[3:0] NS;
+   wire[4:0] NS;
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -41,13 +41,26 @@ localparam CLK_PERIOD=20;
    parameter SLTI = 6'b001010;
    ///////////////////////////////////////
 
+   ///////////////////////////////////////
+   // SUPPORTED FUNCTCODES
+   parameter ADD = 6'b100000;
+   parameter SUB = 6'b100010;
+   parameter ANDD = 6'b100100;
+   parameter ORR = 6'b100101;
+   parameter SLT = 6'b101010;
+   parameter SLL = 6'b000000;
+   parameter MULT = 6'b011000;
+   parameter MFLO = 6'b010010;
+   ///////////////////////////////////////
+
+
+
 ////////////////////////////////////////////////////////////////////////////
 // Subroutine to check the state
 task checkState;
-   input [3:0] thestate;
+   input [4:0] thestate;
    
    begin
-   addrctl <= ADDRCTL[thestate];
    #(CLK_PERIOD);
    if (NS!==thestate)
    begin
@@ -60,26 +73,9 @@ endtask
 
 
 
-   FSM stateMachine(.clk(clk), .reset(rst), .addrctl(addrctl), .Op(Op), .NS(NS));
+   FSM stateMachine(.clk(clk), .reset(rst), .Funct(Funct), .Op(Op), .NS(NS));
    
    initial begin
-   ///////////////////////////////////////////////////////
-   // ADDRCTL VALUES
-   ADDRCTL[0] <= 1; // State 0 always goes to State 1
-   ADDRCTL[1] <= 0;
-   ADDRCTL[2] <= 0;
-   ADDRCTL[3] <= 1; // State 3 always goes to State 4
-   ADDRCTL[4] <= 0;
-   ADDRCTL[5] <= 0;
-   ADDRCTL[6] <= 1; // State 6 always goes to State 7
-   ADDRCTL[7] <= 0;
-   ADDRCTL[8] <= 0;
-   ADDRCTL[9] <= 0;
-   ADDRCTL[10] <= 1; // State 10 always goes to State 11
-   ADDRCTL[11] <= 0;
-   ADDRCTL[12] <= 0;
-   ADDRCTL[13] <= 0;
-   ///////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////
    // TURN THE POWER ON (one tick)
@@ -112,15 +108,106 @@ endtask
    ///////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////
-   // RTYPE: 0->1->6->7
-   $display("Test RTYPE: 0->1->6->7");
-      Op <= RTYPE;
+   // ADD: 0->1->6->7
+   $display("Test ADD: 0->1->6->7");
+      Op <= RTYPE;  Funct <= ADD;
       checkState(0);
       checkState(1);
       checkState(6);
       checkState(7);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
+
+   ///////////////////////////////////////////////////////
+   // SUB: 0->1->6->7
+   $display("Test SUB: 0->1->6->7");
+      Op <= RTYPE;  Funct <= ADD;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(7);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // AND: 0->1->6->7
+   $display("Test AND: 0->1->6->7");
+      Op <= RTYPE;  Funct <= ANDD;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(7);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // OR: 0->1->6->7
+   $display("Test OR: 0->1->6->7");
+      Op <= RTYPE;  Funct <= ORR;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(7);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // SLT: 0->1->6->7
+   $display("Test SLT: 0->1->6->7");
+      Op <= RTYPE;  Funct <= SLT;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(7);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // SLL: 0->1->6->7
+   $display("Test SLL: 0->1->6->7");
+      Op <= RTYPE;  Funct <= SLL;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(7);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // MULT: 0->1->6->14
+   $display("Test MULT: 0->1->6->14");
+      Op <= RTYPE;  Funct <= MULT;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(14);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
+
+   ///////////////////////////////////////////////////////
+   // ADD: 0->1->6->15
+   $display("Test ADD: 0->1->6->15");
+      Op <= RTYPE;  Funct <= MFLO;
+      checkState(0);
+      checkState(1);
+      checkState(6);
+      checkState(15);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
 
    ///////////////////////////////////////////////////////
    // BEQ: 0->1->8
@@ -193,9 +280,4 @@ endtask
    end*/
    
 
-  always@(posedge clk)
-    begin
-      addrctl <= ADDRCTL[NS];
-   end
- 
 endmodule
