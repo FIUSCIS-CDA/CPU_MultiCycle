@@ -1,0 +1,1853 @@
+m255
+K4
+z0
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+vADD
+Z0 !s110 1698930387
+!i10b 1
+!s100 gBT>BBKYN[oz5l64hH7cC2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I1O[V@HgjeFRDdcFz[?Z>P3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle
+Z4 w1698757948
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADD.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADD.v
+!i122 290
+L0 20 58
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1698930387.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADD.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADD.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@a@d@d
+vADDI
+R0
+!i10b 1
+!s100 LMl=hmFehAQ5]0X4;JD]F1
+R1
+Im8mGC_R`PNo6A[U7d=1I@0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADDI.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADDI.v
+!i122 291
+Z9 L0 20 32
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADDI.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ADDI.v|
+!i113 1
+R7
+R8
+n@a@d@d@i
+vALU_32
+Z10 !s110 1698930386
+!i10b 1
+!s100 lYA?;LY3X[FHWe2DcSI5o3
+R1
+INVI>AFVR>1>W:RhY7KLTB0
+R2
+R3
+Z11 w1698410655
+8C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALU_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALU_32.v
+!i122 273
+L0 20 589
+R5
+r1
+!s85 0
+31
+Z12 !s108 1698930386.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALU_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALU_32.v|
+!i113 1
+R7
+R8
+n@a@l@u_32
+vALUBit31
+Z13 !s110 1698930385
+!i10b 1
+!s100 [h@NMSPO4GPYgAY7^;[BJ3
+R1
+IfL:8GYQVQ9`]HRAJ@M8o:3
+R2
+R3
+R11
+8C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBit31.v
+FC:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBit31.v
+!i122 253
+L0 20 91
+R5
+r1
+!s85 0
+31
+Z14 !s108 1698930384.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBit31.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBit31.v|
+!i113 1
+R7
+R8
+n@a@l@u@bit31
+vALUBits0To30
+R13
+!i10b 1
+!s100 IGVjFVb3f1SeJmHSU==Ba0
+R1
+IiJaBGh1RNQI1kKX4Ye86z0
+R2
+R3
+R11
+8C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBits0To30.v
+FC:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBits0To30.v
+!i122 254
+L0 20 75
+R5
+r1
+!s85 0
+31
+Z15 !s108 1698930385.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBits0To30.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/ALU_32/ALUBits0To30.v|
+!i113 1
+R7
+R8
+n@a@l@u@bits0@to30
+vALUCtl
+R13
+!i10b 1
+!s100 ^EbQ;LPiFM6oVM9c]KVJ^0
+R1
+I6HB4]COSD99lE0PWIo;692
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/ALUCtl.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/ALUCtl.v
+!i122 265
+L0 20 66
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/ALUCtl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/ALUCtl.v|
+!i113 1
+R7
+R8
+n@a@l@u@ctl
+vANDD
+R0
+!i10b 1
+!s100 cLOhWC8ic6`S81<LfilzU1
+R1
+I2OAI@Pbc`SfN8AiK`e7[o2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ANDD.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ANDD.v
+!i122 292
+Z16 L0 20 55
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ANDD.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ANDD.v|
+!i113 1
+R7
+R8
+n@a@n@d@d
+vBEQ
+R0
+!i10b 1
+!s100 P;6dckH]4lnanZVe1jz_>0
+R1
+IkMTHo79z:[`:kJ<l8HoAz3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BEQ.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BEQ.v
+!i122 293
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BEQ.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BEQ.v|
+!i113 1
+R7
+R8
+n@b@e@q
+vBNE
+R0
+!i10b 1
+!s100 jjlJWX:@KD>>z4aRNEf_=2
+R1
+Ig<lSKb^@Y:jG9CK2YJjdl2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BNE.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BNE.v
+!i122 294
+Z17 L0 20 29
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BNE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/BNE.v|
+!i113 1
+R7
+R8
+n@b@n@e
+vCPU_MultiCycle
+R10
+!i10b 1
+!s100 4za63J71dFmOOPNzWO4j13
+R1
+IB]5QPf:mh^>C^UIce=g<Y1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CPU_MultiCycle.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CPU_MultiCycle.v
+!i122 272
+L0 20 261
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CPU_MultiCycle.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CPU_MultiCycle.v|
+!i113 1
+R7
+R8
+n@c@p@u_@multi@cycle
+vCTRL
+R13
+!i10b 1
+!s100 EEjB2[leZT<Y3VdkDnAh^2
+R1
+I4oVC]zgbbKiLUM8oBC:cZ0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CTRL.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CTRL.v
+!i122 266
+L0 20 163
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CTRL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/CTRL.v|
+!i113 1
+R7
+R8
+n@c@t@r@l
+vDecoder_32
+Z18 !s110 1698930384
+!i10b 1
+!s100 hJ@1ZT_L_i]foPI4<:HFi2
+R1
+IjfFET_0E?:UXFbT;RG25n1
+R2
+R3
+w1697807552
+8C:/Users/tcickovs/Desktop/CompArch2/Decoder_32/Decoder_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/Decoder_32/Decoder_32.v
+!i122 249
+L0 20 159
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Decoder_32/Decoder_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Decoder_32/Decoder_32.v|
+!i113 1
+R7
+R8
+n@decoder_32
+vDESwitch
+R18
+!i10b 1
+!s100 [8k:EBCkI0J3K0z<[`=;i0
+R1
+I@<;X7GLbUS^`KPU0^Hgc<1
+R2
+R3
+Z19 w1697066876
+8C:/Users/tcickovs/Desktop/CompArch2/DESwitch/DESwitch.v
+FC:/Users/tcickovs/Desktop/CompArch2/DESwitch/DESwitch.v
+!i122 244
+L0 20 46
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/DESwitch/DESwitch.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/DESwitch/DESwitch.v|
+!i113 1
+R7
+R8
+n@d@e@switch
+vDM_asynch
+R13
+!i10b 1
+!s100 [1S`=2KkFL^^>IIm[4K^j0
+R1
+IlPlB1;gT00FIn_Ih0U3MY2
+R2
+R3
+w1698411392
+8C:/Users/tcickovs/Desktop/CompArch2/DM/DM_asynch.v
+FC:/Users/tcickovs/Desktop/CompArch2/DM/DM_asynch.v
+!i122 258
+L0 9 19
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/DM/DM_asynch.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/DM/DM_asynch.v|
+!i113 1
+R7
+R8
+n@d@m_asynch
+vDSwitch
+Z20 !s110 1698930383
+!i10b 1
+!s100 4jd<GIQQ^nbQUWS;Ghk7m1
+R1
+I[zV>][kYHNGAlJJnC4e1Q2
+R2
+R3
+Z21 w1697067170
+8C:/Users/tcickovs/Desktop/CompArch2/DSwitch/DSwitch.v
+FC:/Users/tcickovs/Desktop/CompArch2/DSwitch/DSwitch.v
+!i122 237
+Z22 L0 20 38
+R5
+r1
+!s85 0
+31
+Z23 !s108 1698930383.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/DSwitch/DSwitch.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/DSwitch/DSwitch.v|
+!i113 1
+R7
+R8
+n@d@switch
+vEncoder_32
+Z24 !s110 1698930388
+!i10b 1
+!s100 hQDf57eQ7NBMCB:4bOAWl1
+R1
+INk]78aLn[zVj=4DYUbDe40
+R2
+R3
+w1698755845
+8C:/Users/tcickovs/Desktop/CompArch2/Encoder_32/Encoder_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/Encoder_32/Encoder_32.v
+!i122 306
+L0 20 119
+R5
+r1
+!s85 0
+31
+Z25 !s108 1698930388.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Encoder_32/Encoder_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Encoder_32/Encoder_32.v|
+!i113 1
+R7
+R8
+n@encoder_32
+vFlopenr
+R18
+!i10b 1
+!s100 Oh0eVTzzGdZjgFNjSf4BH0
+R1
+I8Faf`=6Xo3:>IMX?dFnUJ3
+R2
+R3
+R19
+8C:/Users/tcickovs/Desktop/CompArch2/Flopenr/Flopenr.v
+FC:/Users/tcickovs/Desktop/CompArch2/Flopenr/Flopenr.v
+!i122 243
+Z26 L0 20 43
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Flopenr/Flopenr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Flopenr/Flopenr.v|
+!i113 1
+R7
+R8
+n@flopenr
+vFlopenr_32
+R20
+!i10b 1
+!s100 CPQX;?<niPa>EY@4[2I_X0
+R1
+I:7zgn@eBV]LFEJ2?mWQ:?2
+R2
+R3
+w1697066875
+8C:/Users/tcickovs/Desktop/CompArch2/Flopenr_32/Flopenr_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/Flopenr_32/Flopenr_32.v
+!i122 235
+Z27 L0 20 279
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Flopenr_32/Flopenr_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Flopenr_32/Flopenr_32.v|
+!i113 1
+R7
+R8
+n@flopenr_32
+vFlopr
+R20
+!i10b 1
+!s100 `OkH1XDODQB@Xf;@@B=E;1
+R1
+ImjOCLHfWYCaS3neFzBL5a1
+R2
+R3
+R21
+8C:/Users/tcickovs/Desktop/CompArch2/Flopr/Flopr.v
+FC:/Users/tcickovs/Desktop/CompArch2/Flopr/Flopr.v
+!i122 236
+L0 20 40
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Flopr/Flopr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Flopr/Flopr.v|
+!i113 1
+R7
+R8
+n@flopr
+vFlopr_32
+R20
+!i10b 1
+!s100 Ah7@QjXz>ML`Um^hT7X^e1
+R1
+If3HHDd5Aiz@dJFaL]Q5fa1
+R2
+R3
+w1697067169
+8C:/Users/tcickovs/Desktop/CompArch2/Flopr_32/Flopr_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/Flopr_32/Flopr_32.v
+!i122 233
+Z28 L0 20 245
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Flopr_32/Flopr_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Flopr_32/Flopr_32.v|
+!i113 1
+R7
+R8
+n@flopr_32
+vFour
+R20
+!i10b 1
+!s100 8;onY<3Vd3ziDFc[32dh20
+R1
+I6cnY@azT3FX2Acd7UmC=<0
+R2
+R3
+w1698755840
+8C:/Users/tcickovs/Desktop/CompArch2/Four/Four.v
+FC:/Users/tcickovs/Desktop/CompArch2/Four/Four.v
+!i122 239
+L0 20 79
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Four/Four.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Four/Four.v|
+!i113 1
+R7
+R8
+n@four
+vFSM
+R10
+!i10b 1
+!s100 ICf`1M>b8;;=KgC5lBZNj2
+R1
+ILTLdgZZi1LYkMm<J_fM_i1
+R2
+R3
+w1698758839
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/FSM.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/FSM.v
+!i122 267
+L0 20 491
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/FSM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/FSM.v|
+!i113 1
+R7
+R8
+n@f@s@m
+vGrounder
+R13
+!i10b 1
+!s100 oX@i7>_l=Qi90[LR`dVdl2
+R1
+IJ9GM^>6X3MRJoLYkjM2mQ1
+R2
+R3
+Z29 w1698410658
+8C:/Users/tcickovs/Desktop/CompArch2/Grounder/Grounder.v
+FC:/Users/tcickovs/Desktop/CompArch2/Grounder/Grounder.v
+!i122 259
+L0 20 14
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Grounder/Grounder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Grounder/Grounder.v|
+!i113 1
+R7
+R8
+n@grounder
+vINC4
+R13
+!i10b 1
+!s100 gznoz84H]HjKMOl_<78=:2
+R1
+IJnIPY?3iz1G1[]Ok8W@A]0
+R2
+R3
+w1698755843
+8C:/Users/tcickovs/Desktop/CompArch2/INC4/INC4.v
+FC:/Users/tcickovs/Desktop/CompArch2/INC4/INC4.v
+!i122 257
+L0 20 65
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/INC4/INC4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/INC4/INC4.v|
+!i113 1
+R7
+R8
+n@i@n@c4
+vJ
+R0
+!i10b 1
+!s100 9CziIXPkDG;FTE<a:K;Qh0
+R1
+ITlO9Q1QKOiZL1TnK=0j^L3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/J.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/J.v
+!i122 295
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/J.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/J.v|
+!i113 1
+R7
+R8
+n@j
+vLW
+R24
+!i10b 1
+!s100 E3?BE7hA3P`R`4RXXh_]K1
+R1
+I4kL8BUM2dF>gF;j5F=]Wo2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/LW.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/LW.v
+!i122 296
+Z30 L0 20 26
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/LW.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/LW.v|
+!i113 1
+R7
+R8
+n@l@w
+vMFLO
+R24
+!i10b 1
+!s100 ;B`i=HINhLOeYVm^iMVnO2
+R1
+I2`nOgb8j2^W4k_MJ1b[?80
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MFLO.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MFLO.v
+!i122 297
+R16
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MFLO.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MFLO.v|
+!i113 1
+R7
+R8
+n@m@f@l@o
+vMicroROM
+R13
+!i10b 1
+!s100 il19=6gL=lH[1ePhRnHQP3
+R1
+I4Sm;85nM2J[kaeQ0b_CVO0
+R2
+R3
+w1698846811
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/MicroROM.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/MicroROM.v
+!i122 263
+L0 10 45
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/MicroROM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/MicroROM.v|
+!i113 1
+R7
+R8
+n@micro@r@o@m
+vMULT
+R24
+!i10b 1
+!s100 oD7<L6hNB7N=BL>BBD0oG2
+R1
+IRLe:GUU=<aKJn@h?OF1i`0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MULT.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MULT.v
+!i122 298
+R16
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MULT.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/MULT.v|
+!i113 1
+R7
+R8
+n@m@u@l@t
+vMultiplier_32
+R13
+!i10b 1
+!s100 oNhV0[V?bWVK7e?7Mg0?:2
+R1
+I[Q9Y3DdYmbeicelYlN<@?3
+R2
+R3
+R29
+8C:/Users/tcickovs/Desktop/CompArch2/Multiplier_32/Multiplier_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/Multiplier_32/Multiplier_32.v
+!i122 261
+L0 20 12930
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/Multiplier_32/Multiplier_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/Multiplier_32/Multiplier_32.v|
+!i113 1
+R7
+R8
+n@multiplier_32
+vMUX2
+R20
+!i10b 1
+!s100 Skf`m4hzQgM_mf?`BhdKT2
+R1
+Ih=;gZ<dbVI]>92lYTg^hz3
+R2
+R3
+R11
+8C:/Users/tcickovs/Desktop/CompArch2/MUX2/MUX2.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX2/MUX2.v
+!i122 232
+L0 20 30
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX2/MUX2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX2/MUX2.v|
+!i113 1
+R7
+R8
+n@m@u@x2
+vMUX2_32
+R20
+!i10b 1
+!s100 5zLS>g?aJM8nEg76bVCBJ0
+R1
+I`jDaUE8]CNCQOV2`E_zMC0
+R2
+R3
+w1698410659
+8C:/Users/tcickovs/Desktop/CompArch2/MUX2_32/MUX2_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX2_32/MUX2_32.v
+!i122 234
+R28
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX2_32/MUX2_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX2_32/MUX2_32.v|
+!i113 1
+R7
+R8
+n@m@u@x2_32
+vMUX2_5
+R20
+!i10b 1
+!s100 Hbh_c<6A6n_@AnC9nYMO00
+R1
+IkfUS;B]LlHUaX5IBI1z0C3
+R2
+R3
+w1698411386
+8C:/Users/tcickovs/Desktop/CompArch2/MUX2_5/MUX2_5.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX2_5/MUX2_5.v
+!i122 238
+L0 20 56
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX2_5/MUX2_5.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX2_5/MUX2_5.v|
+!i113 1
+R7
+R8
+n@m@u@x2_5
+vMUX3
+R18
+!i10b 1
+!s100 ;81]RU<X9[nQL2m_HK_gi0
+R1
+IaFW1PodP:LR:LN=4chEJg1
+R2
+R3
+w1698411391
+8C:/Users/tcickovs/Desktop/CompArch2/MUX3/MUX3.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX3/MUX3.v
+!i122 251
+R22
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX3/MUX3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX3/MUX3.v|
+!i113 1
+R7
+R8
+n@m@u@x3
+vMUX32
+R18
+!i10b 1
+!s100 _SDLA[glC_^bgU<KCH_Gi1
+R1
+I^OiL:z662YzC1HF1LU;V13
+R2
+R3
+w1697807553
+8C:/Users/tcickovs/Desktop/CompArch2/MUX32/MUX32.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX32/MUX32.v
+!i122 248
+L0 20 257
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX32/MUX32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX32/MUX32.v|
+!i113 1
+R7
+R8
+n@m@u@x32
+vMUX32_32
+R18
+!i10b 1
+!s100 HzaY<WRGS4aCj3X8me4eQ0
+R1
+I0:S^IkmN6N7c4[H8O:Y=<3
+R2
+R3
+w1697807551
+8C:/Users/tcickovs/Desktop/CompArch2/MUX32_32/MUX32_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX32_32/MUX32_32.v
+!i122 247
+L0 20 1265
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX32_32/MUX32_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX32_32/MUX32_32.v|
+!i113 1
+R7
+R8
+n@m@u@x32_32
+vMUX3_32
+R18
+!i10b 1
+!s100 =ZS9BDmDEXHYAYgbPjY;F0
+R1
+I?32To1mg:Q]Q4aCammAL22
+R2
+R3
+w1698411388
+8C:/Users/tcickovs/Desktop/CompArch2/MUX3_32/MUX3_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX3_32/MUX3_32.v
+!i122 246
+R27
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX3_32/MUX3_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX3_32/MUX3_32.v|
+!i113 1
+R7
+R8
+n@m@u@x3_32
+vMUX4
+R18
+!i10b 1
+!s100 iO3Z@nV>Lc?RKDoI`iSG:3
+R1
+IJAlc4gIUEUSLocQomJ1lD3
+R2
+R3
+Z31 w1698410656
+8C:/Users/tcickovs/Desktop/CompArch2/MUX4/MUX4.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX4/MUX4.v
+!i122 250
+R26
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX4/MUX4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX4/MUX4.v|
+!i113 1
+R7
+R8
+n@m@u@x4
+vMUX4_32
+R18
+!i10b 1
+!s100 l6VIMQ?=J[QWRVS?G??WV2
+R1
+I7Ug8cRB9TjncZc]lDMDY60
+R2
+R3
+w1698755841
+8C:/Users/tcickovs/Desktop/CompArch2/MUX4_32/MUX4_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/MUX4_32/MUX4_32.v
+!i122 245
+L0 20 313
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/MUX4_32/MUX4_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/MUX4_32/MUX4_32.v|
+!i113 1
+R7
+R8
+n@m@u@x4_32
+vNS0
+R13
+!i10b 1
+!s100 G`oZ@F@jRzaL^bJ_6faO50
+R1
+IZL6T=@AAN9]QUd9ahhbaQ3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS0.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS0.v
+!i122 264
+L0 20 109
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS0.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS0.v|
+!i113 1
+R7
+R8
+n@n@s0
+vNS1
+R10
+!i10b 1
+!s100 KZT=1KiFMh0^XKNK^VI[Q1
+R1
+I5zflNV26RT9TI2X6KJ97f2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS1.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS1.v
+!i122 268
+Z32 L0 20 116
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS1.v|
+!i113 1
+R7
+R8
+n@n@s1
+vNS2
+R10
+!i10b 1
+!s100 fSo<USa8c@f@ZgRY?I7Ce1
+R1
+I6d^?Wd7lJ`_kPE9akTFQX1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS2.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS2.v
+!i122 269
+R32
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS2.v|
+!i113 1
+R7
+R8
+n@n@s2
+vNS3
+R10
+!i10b 1
+!s100 A5bkB]hN1Y7d:d6N[:<D<2
+R1
+I<2zc::5SDj>?AGh4Bngje1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS3.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS3.v
+!i122 270
+L0 20 101
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/NS3.v|
+!i113 1
+R7
+R8
+n@n@s3
+vOneBitAdder
+R13
+!i10b 1
+!s100 :_B8_F3DhMm2[czZ<gkoN0
+R1
+Ig3?70jQblmKcQkeAfE8`i0
+R2
+R3
+w1698410657
+8C:/Users/tcickovs/Desktop/CompArch2/OneBitAdder/OneBitAdder.v
+FC:/Users/tcickovs/Desktop/CompArch2/OneBitAdder/OneBitAdder.v
+!i122 256
+L0 20 67
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/OneBitAdder/OneBitAdder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/OneBitAdder/OneBitAdder.v|
+!i113 1
+R7
+R8
+n@one@bit@adder
+vOneBitAdderHalf
+R13
+!i10b 1
+!s100 ^cdZD_>ddXgin<;6a3b7l2
+R1
+IjV?W>55MUNVzBQ7SI9Clj3
+R2
+R3
+Z33 w1698410660
+8C:/Users/tcickovs/Desktop/CompArch2/OneBitAdderHalf/OneBitAdderHalf.v
+FC:/Users/tcickovs/Desktop/CompArch2/OneBitAdderHalf/OneBitAdderHalf.v
+!i122 262
+Z34 L0 20 35
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/OneBitAdderHalf/OneBitAdderHalf.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/OneBitAdderHalf/OneBitAdderHalf.v|
+!i113 1
+R7
+R8
+n@one@bit@adder@half
+vORR
+R24
+!i10b 1
+!s100 Mi6N@AifAJdHG7:GjIWPf2
+R1
+InU<MeJH7UmKSnIXR@M:D@2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ORR.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ORR.v
+!i122 299
+Z35 L0 20 52
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ORR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/ORR.v|
+!i113 1
+R7
+R8
+n@o@r@r
+vOverflowDetection
+R13
+!i10b 1
+!s100 J[fgzG`k`B_M1^Q]7<3z=3
+R1
+I[`JoboFIEcT4XA_7iI4^A0
+R2
+R3
+R11
+8C:/Users/tcickovs/Desktop/CompArch2/ALU_32/OverflowDetection.v
+FC:/Users/tcickovs/Desktop/CompArch2/ALU_32/OverflowDetection.v
+!i122 255
+L0 20 41
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/ALU_32/OverflowDetection.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/ALU_32/OverflowDetection.v|
+!i113 1
+R7
+R8
+n@overflow@detection
+vRF
+R18
+!i10b 1
+!s100 ZOlDin0ULX:OYF]D5KJ_^3
+R1
+IT_YSbA:8L`<Y5daeKPZ?02
+R2
+R3
+w1697807550
+8C:/Users/tcickovs/Desktop/CompArch2/RF/RF.v
+FC:/Users/tcickovs/Desktop/CompArch2/RF/RF.v
+!i122 242
+L0 20 555
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/RF/RF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/RF/RF.v|
+!i113 1
+R7
+R8
+n@r@f
+vRTYPE
+R24
+!i10b 1
+!s100 >nU=B3M9o[`N`3iG[HIMO3
+R1
+IaW91DE?b=Uf6YTh?>1FgN0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/RTYPE.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/RTYPE.v
+!i122 300
+R34
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/RTYPE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/RTYPE.v|
+!i113 1
+R7
+R8
+n@r@t@y@p@e
+vS0
+R10
+!i10b 1
+!s100 Iz7FQ>9FY;S=lYQYC1<V;2
+R1
+I2Kg0gA1L1CM8D889AfPHA3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S0.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S0.v
+!i122 274
+R34
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S0.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S0.v|
+!i113 1
+R7
+R8
+n@s0
+vS1
+R10
+!i10b 1
+!s100 i`J3@:moaKn^im:V2Vdfi3
+R1
+INaUTmmCbe^C5kBOcMlVMk2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S1.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S1.v
+!i122 275
+R9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S1.v|
+!i113 1
+R7
+R8
+n@s1
+vS10
+R0
+!i10b 1
+!s100 le@X_eTLD?B7DmX=XQcgl2
+R1
+IX31XifD^Z>_BQ4F`i[Tf61
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S10.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S10.v
+!i122 284
+R17
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S10.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S10.v|
+!i113 1
+R7
+R8
+n@s10
+vS11
+R0
+!i10b 1
+!s100 S:1Lj<5X6n7=JhC9<YB[32
+R1
+I@dnnC:5XjP3[_oi8a3NPo3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S11.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S11.v
+!i122 285
+R30
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S11.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S11.v|
+!i113 1
+R7
+R8
+n@s11
+vS12
+R0
+!i10b 1
+!s100 dnG=zTYgMK=L<a:hcf:@M2
+R1
+IZ6Ln7?BXNRl^7TkLIF>WO2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S12.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S12.v
+!i122 286
+R17
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S12.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S12.v|
+!i113 1
+R7
+R8
+n@s12
+vS13
+R0
+!i10b 1
+!s100 deC7I0>3aXF]<dc;B9g>I2
+R1
+IiLH?C?8k[?JMACez^M<iQ3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S13.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S13.v
+!i122 287
+R30
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S13.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S13.v|
+!i113 1
+R7
+R8
+n@s13
+vS14
+R0
+!i10b 1
+!s100 XbCUmWRagNC9A_Bg]FdL32
+R1
+I9kb6IoV@>][KPhfAbS_YP1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S14.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S14.v
+!i122 288
+R30
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S14.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S14.v|
+!i113 1
+R7
+R8
+n@s14
+vS15
+R0
+!i10b 1
+!s100 IQPI3LPFFUA?Jna?24YP;0
+R1
+IkNmENDV_CImNiFclnVM3I0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S15.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S15.v
+!i122 289
+Z36 L0 20 23
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S15.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S15.v|
+!i113 1
+R7
+R8
+n@s15
+vS2
+R10
+!i10b 1
+!s100 45ZfY<R@;bCOPPKZ[5h_[1
+R1
+IlB6:UP_2@GHI69PgWMOkU1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S2.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S2.v
+!i122 276
+R9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S2.v|
+!i113 1
+R7
+R8
+n@s2
+vS3
+R10
+!i10b 1
+!s100 B<=c7kj]ZzkH1>JARGd3^3
+R1
+I`bmM^70@kjEPn3jS3:3:Y2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S3.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S3.v
+!i122 277
+R17
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S3.v|
+!i113 1
+R7
+R8
+n@s3
+vS4
+R10
+!i10b 1
+!s100 dPC<:WU:WUL:jHm;Kg`YI1
+R1
+Iia2G;AW8>fDWUO8m8c5@[1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S4.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S4.v
+!i122 278
+R9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S4.v|
+!i113 1
+R7
+R8
+n@s4
+vS5
+R10
+!i10b 1
+!s100 S=LJjo;VOd5OE<a:3C>T_0
+R1
+ILSOHn1[^IzKTRBdAcVS<B3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S5.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S5.v
+!i122 279
+R17
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S5.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S5.v|
+!i113 1
+R7
+R8
+n@s5
+vS6
+R10
+!i10b 1
+!s100 6DQ^ZCjn@1JQ>[IIa4QEm2
+R1
+IoYff0_kh<a@zn7O]LX1JI0
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S6.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S6.v
+!i122 280
+R17
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S6.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S6.v|
+!i113 1
+R7
+R8
+n@s6
+vS7
+R10
+!i10b 1
+!s100 ;G3ZAoF^f[P>W<d1i8GRX1
+R1
+I^DI`JYaGkj9:K5kZPch9a2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S7.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S7.v
+!i122 281
+R30
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S7.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S7.v|
+!i113 1
+R7
+R8
+n@s7
+vS8
+R0
+!i10b 1
+!s100 ;]4O9U`fX840[F9BlAKZ30
+R1
+IYUcOm44`Hd62@<ldfd8U90
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S8.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S8.v
+!i122 282
+R9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S8.v|
+!i113 1
+R7
+R8
+n@s8
+vS9
+R0
+!i10b 1
+!s100 LVQ>`NcDmM3DmA;C^m24T1
+R1
+I2CGOiHKT?mG9bA0_J<hJ`1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S9.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S9.v
+!i122 283
+R17
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S9.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/States/S9.v|
+!i113 1
+R7
+R8
+n@s9
+vSameBit
+R20
+!i10b 1
+!s100 YTo?1mH>N:Ab@9[6<6i2V2
+R1
+I:2;XPMIQ3^D?GXnb;2ZOa0
+R2
+R3
+R31
+8C:/Users/tcickovs/Desktop/CompArch2/SameBit/SameBit.v
+FC:/Users/tcickovs/Desktop/CompArch2/SameBit/SameBit.v
+!i122 231
+L0 20 16
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/SameBit/SameBit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/SameBit/SameBit.v|
+!i113 1
+R7
+R8
+n@same@bit
+vSE16_32
+R18
+!i10b 1
+!s100 loWASPf42KF_T><GTz1Me2
+R1
+INK1HP5;^7O:@?`b<SE1RW3
+R2
+R3
+w1698411387
+8C:/Users/tcickovs/Desktop/CompArch2/SE16_32/SE16_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/SE16_32/SE16_32.v
+!i122 240
+L0 20 177
+R5
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/tcickovs/Desktop/CompArch2/SE16_32/SE16_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/SE16_32/SE16_32.v|
+!i113 1
+R7
+R8
+n@s@e16_32
+vSL2_32
+R18
+!i10b 1
+!s100 @kbcoe33D]0Q@7zgj>F0g1
+R1
+I^naAFj:BE4GdS2oFYB9`Y0
+R2
+R3
+w1698413012
+8C:/Users/tcickovs/Desktop/CompArch2/SL2_32/SL2_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/SL2_32/SL2_32.v
+!i122 241
+Z37 L0 20 182
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/SL2_32/SL2_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/SL2_32/SL2_32.v|
+!i113 1
+R7
+R8
+n@s@l2_32
+vSLL
+R24
+!i10b 1
+!s100 jloZ@6303?hT?;zakRmP<2
+R1
+ILhQ_K4<z07R1z<D9YJaEL3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLL.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLL.v
+!i122 301
+L0 20 61
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLL.v|
+!i113 1
+R7
+R8
+n@s@l@l
+vSLL_32
+R13
+!i10b 1
+!s100 RJCkjz6lGhmh1eNb55]gN2
+R1
+IP`AlI:dS41lQl6iHT^;nL3
+R2
+R3
+R33
+8C:/Users/tcickovs/Desktop/CompArch2/SLL_32/SLL_32.v
+FC:/Users/tcickovs/Desktop/CompArch2/SLL_32/SLL_32.v
+!i122 260
+L0 20 1206
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/tcickovs/Desktop/CompArch2/SLL_32/SLL_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/SLL_32/SLL_32.v|
+!i113 1
+R7
+R8
+n@s@l@l_32
+vSLT
+R24
+!i10b 1
+!s100 EWfb<1eVi6FMf2@ZH<B2H3
+R1
+I:EVBJHV6Ln^1i<ke1]PFz3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLT.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLT.v
+!i122 302
+R35
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLT.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLT.v|
+!i113 1
+R7
+R8
+n@s@l@t
+vSLTI
+R24
+!i10b 1
+!s100 1:O3M=M_X:a^47CZ>RS8D1
+R1
+IHiU6SZcI@J57R2lPDo3B[1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLTI.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLTI.v
+!i122 303
+R17
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLTI.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SLTI.v|
+!i113 1
+R7
+R8
+n@s@l@t@i
+vSPLICE_PCJ
+R18
+!i10b 1
+!s100 KW99NRFz]2M00joaAPN0Y3
+R1
+IjAiVbBjL@BRj7g;^_z2P_1
+R2
+R3
+w1698411389
+8C:/Users/tcickovs/Desktop/CompArch2/SPLICE_PCJ/SPLICE_PCJ.v
+FC:/Users/tcickovs/Desktop/CompArch2/SPLICE_PCJ/SPLICE_PCJ.v
+!i122 252
+R37
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/tcickovs/Desktop/CompArch2/SPLICE_PCJ/SPLICE_PCJ.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/SPLICE_PCJ/SPLICE_PCJ.v|
+!i113 1
+R7
+R8
+n@s@p@l@i@c@e_@p@c@j
+vSUB
+R24
+!i10b 1
+!s100 lO35V]PUl9c9MnV7I0bBK3
+R1
+IY]Q:[dmALS`2_c@a3zffQ1
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SUB.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SUB.v
+!i122 304
+R16
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SUB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SUB.v|
+!i113 1
+R7
+R8
+n@s@u@b
+vSW
+R24
+!i10b 1
+!s100 hL3<dD_@j45d4CmWFgGU61
+R1
+IaFOXeC5`i[9QPWJ84UUKa2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SW.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SW.v
+!i122 305
+R36
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SW.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/FSM/Instructions/SW.v|
+!i113 1
+R7
+R8
+n@s@w
+vtestbench
+R10
+!i10b 1
+!s100 XoI6DNk<dW2VT`c>:0zjU3
+R1
+II:g]BB<ad=Z2]<b_;D>NO3
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.v
+Z38 F../Test/Test.v
+!i122 271
+L0 10 213
+R5
+r1
+!s85 0
+31
+R12
+!s107 ../Test/Test.v|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.v|
+!i113 1
+R7
+R8
+vtestbenchMult
+R24
+!i10b 1
+!s100 jNTlb3`V4=g<0VAe79Ri[0
+R1
+Id:@zEQ5[f1_TX]oCJ285z2
+R2
+R3
+R4
+8C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.mult.v
+FC:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.mult.v
+R38
+!i122 307
+L0 10 216
+R5
+r1
+!s85 0
+31
+R25
+!s107 ../Test/Test.v|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.mult.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch2/CPU_MultiCycle/testbench.mult.v|
+!i113 1
+R7
+R8
+ntestbench@mult
