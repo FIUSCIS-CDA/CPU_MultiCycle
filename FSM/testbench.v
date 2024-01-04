@@ -39,6 +39,7 @@ localparam CLK_PERIOD=20;
    parameter ADDI = 6'b001000;
    parameter BNE = 6'b000101;
    parameter SLTI = 6'b001010;
+   parameter LUI = 6'b001111;
    ///////////////////////////////////////
 
    ///////////////////////////////////////
@@ -121,7 +122,7 @@ endtask
    ///////////////////////////////////////////////////////
    // SUB: 0->1->6->7
    $display("Test SUB: 0->1->6->7");
-      Op <= RTYPE;  Funct <= ADD;
+      Op <= RTYPE;  Funct <= SUB;
       checkState(0);
       checkState(1);
       checkState(6);
@@ -190,7 +191,7 @@ endtask
       checkState(0);
       checkState(1);
       checkState(6);
-      checkState(14);
+      checkState(13);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
 
@@ -203,7 +204,7 @@ endtask
       checkState(0);
       checkState(1);
       checkState(6);
-      checkState(15);
+      checkState(14);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
 
@@ -230,34 +231,45 @@ endtask
    ///////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////
-   // ADDI: 0->1->10->11
-   $display("Test ADDI: 0->1->10->11");
+   // ADDI: 0->1->2->10
+   $display("Test ADDI: 0->1->2->10");
       Op <= ADDI;
       checkState(0);
       checkState(1);
+      checkState(2);
       checkState(10);
-      checkState(11);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////
-   // BNE: 0->1->12
-   $display("Test BNE: 0->1->12");
+   // BNE: 0->1->11
+   $display("Test BNE: 0->1->11");
       Op <= BNE;
       checkState(0);
       checkState(1);
-      checkState(12);
+      checkState(11);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////
-   // SLTI: 0->1->13->11
-   $display("Test SLTI: 0->1->13->11");
+   // SLTI: 0->1->12->10
+   $display("Test SLTI: 0->1->12->10");
       Op <= SLTI;
       checkState(0);
       checkState(1);
-      checkState(13);
-      checkState(11);
+      checkState(12);
+      checkState(10);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+   ///////////////////////////////////////////////////////
+   // LUI: 0->1->15->10
+   $display("Test LUI: 0->1->15->10");
+      Op <= LUI;
+      checkState(0);
+      checkState(1);
+      checkState(15);
+      checkState(10);
    $display("[PASS]");
    ///////////////////////////////////////////////////////
 
