@@ -1,6 +1,6 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
-// and other software and tools, and its AMPP partner logic 
+// and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
@@ -10,11 +10,12 @@
 // agreement, including, without limitation, that your use is for
 // the sole purpose of programming logic devices manufactured by
 // Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details.
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Tue Jan 02 18:16:18 2024"
+// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// CREATED		"Thu Jan 04 08:48:37 2024"
 
 module CPU_MultiCycle(
 	clk,
@@ -37,26 +38,27 @@ output wire	[4:0] state;
 
 wire	[31:0] A;
 wire	[31:0] Adr;
-wire	[1:0] ALUOp;
+wire	[2:0] ALUOp;
 wire	[31:0] ALUOut;
+wire	[31:0] ALUResult;
 wire	ALUSrcA;
 wire	[1:0] ALUSrcB;
-wire	ANDout;
+wire	ANDoutput;
 wire	[31:0] B;
 wire	[31:0] Data;
 wire	[31:0] ImmExt;
 wire	[31:0] ImmExt_times_4;
+wire	[31:0] Instr;
 wire	IorD;
-wire	[31:0] IR;
 wire	IRWrite;
 wire	isBNE;
 wire	isZero;
-wire	[31:0] LO_Q;
+wire	[31:0] LOval;
 wire	LOwrite;
 wire	[1:0] MemToReg;
 wire	MemWrite;
 wire	[4:0] myState;
-wire	nEq;
+wire	notEqual;
 wire	OV;
 wire	[31:0] PC;
 wire	PCEn;
@@ -65,19 +67,21 @@ wire	[31:0] PCPrime;
 wire	[1:0] PCSrc;
 wire	PCWrite;
 wire	PCWriteCond;
-wire	[31:0] RD1;
-wire	[31:0] RD2;
-wire	[31:0] RData;
+wire	[31:0] RD;
+wire	[31:0] ReadData1;
+wire	[31:0] ReadData2;
 wire	RegDst;
 wire	RegWrite;
+wire	Shift16;
 wire	[31:0] SrcA;
 wire	[31:0] SrcB;
-wire	[4:0] WA;
-wire	[31:0] WD;
-wire	[31:0] SYNTHESIZED_WIRE_5;
-wire	[31:0] SYNTHESIZED_WIRE_1;
-wire	SYNTHESIZED_WIRE_2;
-wire	[6:0] SYNTHESIZED_WIRE_3;
+wire	[31:0] WriteData;
+wire	[4:0] WriteRegister;
+wire	[31:0] SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	[6:0] SYNTHESIZED_WIRE_2;
+wire	[4:0] SYNTHESIZED_WIRE_3;
+wire	[4:0] SYNTHESIZED_WIRE_4;
 
 
 
@@ -86,7 +90,7 @@ wire	[6:0] SYNTHESIZED_WIRE_3;
 Flopr_32	b2v_ALURESREG(
 	.reset(reset),
 	.clk(clk),
-	.D(SYNTHESIZED_WIRE_5),
+	.D(ALUResult),
 	.Q(ALUOut));
 
 
@@ -100,23 +104,46 @@ MUX2_32	b2v_AMUX(
 MUX2	b2v_ANDMUX(
 	.S(isBNE),
 	.A(isZero),
-	.B(nEq),
-	.Y(SYNTHESIZED_WIRE_2));
+	.B(notEqual),
+	.Y(SYNTHESIZED_WIRE_1));
 
 
 MUX4_32	b2v_BMUX(
 	.A(B),
-	.B(SYNTHESIZED_WIRE_1),
+	.B(SYNTHESIZED_WIRE_0),
 	.C(ImmExt),
 	.D(ImmExt_times_4),
 	.S(ALUSrcB),
 	.Y(SrcB));
 
 
-Flopr_32	b2v_DREG(
+CTRL	b2v_ctrlUnit(
+	.clk(clk),
+	.reset(reset),
+	.Funct(Instr[5:0]),
+	.Op(Instr[31:26]),
+	.PCWrite(PCWrite),
+	.PCWriteCond(PCWriteCond),
+	.IorD(IorD),
+	.MemWrite(MemWrite),
+	.IRWrite(IRWrite),
+	.ALUSrcA(ALUSrcA),
+	.RegWrite(RegWrite),
+	.RegDst(RegDst),
+	.isBNE(isBNE),
+	.LOWrite(LOwrite),
+	.Shift16(Shift16),
+	.ALUOp(ALUOp),
+	.ALUSrcB(ALUSrcB),
+	.MemToReg(MemToReg),
+	.PCSrc(PCSrc),
+	.state(myState));
+
+
+Flopr_32	b2v_DR(
 	.reset(reset),
 	.clk(clk),
-	.D(RData),
+	.D(RD),
 	.Q(Data));
 
 
@@ -124,43 +151,44 @@ DM_asynch	b2v_IDM(
 	.we(MemWrite),
 	.a(Adr),
 	.wd(SrcB),
-	.rd(RData));
+	.rd(RD));
 
 
-CTRL	b2v_inst(
-	.clk(clk),
-	.reset(reset),
-	.Funct(IR[5:0]),
-	.Op(IR[31:26]),
-	.MemWrite(MemWrite),
-	.IorD(IorD),
-	.PCWriteCond(PCWriteCond),
-	.IRWrite(IRWrite),
-	.ALUSrcA(ALUSrcA),
-	.RegWrite(RegWrite),
-	.RegDst(RegDst),
-	.isBNE(isBNE),
-	.LOWrite(LOwrite),
-	.PCWrite(PCWrite),
+ALUCtl	b2v_inst(
 	.ALUOp(ALUOp),
-	.ALUSrcB(ALUSrcB),
-	.MemToReg(MemToReg),
-	.PCSrc(PCSrc),
-	.state(myState));
+	.F(Instr[5:0]),
+	.ALUControl(SYNTHESIZED_WIRE_2));
 
-assign	PCEn = ANDout | PCWrite;
-
-assign	nEq =  ~isZero;
-
-assign	ANDout = PCWriteCond & SYNTHESIZED_WIRE_2;
+assign	PCEn = ANDoutput | PCWrite;
 
 
-Flopenr_32	b2v_IREG(
+Sixteen	b2v_inst2(
+	.Y(SYNTHESIZED_WIRE_4));
+
+
+SL2_32	b2v_inst3(
+	.A(ImmExt),
+	.Y(ImmExt_times_4));
+
+assign	notEqual =  ~isZero;
+
+
+MUX3_32	b2v_inst8(
+	.A(ALUResult),
+	.B(ALUOut),
+	.C(PCJump),
+	.S(PCSrc),
+	.Y(PCPrime));
+
+assign	ANDoutput = PCWriteCond & SYNTHESIZED_WIRE_1;
+
+
+Flopenr_32	b2v_IR(
 	.reset(reset),
 	.clk(clk),
 	.E(IRWrite),
-	.D(RData),
-	.Q(IR));
+	.D(RD),
+	.Q(Instr));
 
 
 Flopenr_32	b2v_LO(
@@ -168,47 +196,33 @@ Flopenr_32	b2v_LO(
 	.clk(clk),
 	.E(LOwrite),
 	.D(ALUOut),
-	.Q(LO_Q));
+	.Q(LOval));
 
 
 ALU_32	b2v_MYALU(
 	.A(SrcA),
-	.alu_op(SYNTHESIZED_WIRE_3),
+	.alu_op(SYNTHESIZED_WIRE_2),
 	.B(SrcB),
-	.H(IR[10:6]),
+	.H(SYNTHESIZED_WIRE_3),
 	.Overflow(OV),
 	.Zero(isZero),
-	.Result(SYNTHESIZED_WIRE_5));
-
-
-ALUCtl	b2v_myALUCtl(
-	.ALUOp(ALUOp),
-	.F(IR[5:0]),
-	.ALUControl(SYNTHESIZED_WIRE_3));
+	.Result(ALUResult));
 
 
 RF	b2v_myRF(
 	.reset(reset),
 	.clk(clk),
 	.we(RegWrite),
-	.r1a(IR[25:21]),
-	.r2a(IR[20:16]),
-	.wa(WA),
-	.wd(WD),
-	.r1d(RD1),
-	.r2d(RD2));
-
-
-MUX3_32	b2v_NEXTPCMUX(
-	.A(SYNTHESIZED_WIRE_5),
-	.B(ALUOut),
-	.C(PCJump),
-	.S(PCSrc),
-	.Y(PCPrime));
+	.r1a(Instr[25:21]),
+	.r2a(Instr[20:16]),
+	.wa(WriteRegister),
+	.wd(WriteData),
+	.r1d(ReadData1),
+	.r2d(ReadData2));
 
 
 Four	b2v_number4(
-	.Y(SYNTHESIZED_WIRE_1));
+	.Y(SYNTHESIZED_WIRE_0));
 
 
 MUX2_32	b2v_PCMUX(
@@ -229,51 +243,53 @@ Flopenr_32	b2v_PCREG(
 Flopr_32	b2v_R1DR(
 	.reset(reset),
 	.clk(clk),
-	.D(RD1),
+	.D(ReadData1),
 	.Q(A));
 
 
 Flopr_32	b2v_R2DR(
 	.reset(reset),
 	.clk(clk),
-	.D(RD2),
+	.D(ReadData2),
 	.Q(B));
 
 
 SE16_32	b2v_SECONSTANT(
-	.A(IR[15:0]),
+	.A(Instr[15:0]),
 	.Y(ImmExt));
 
 
-SL2_32	b2v_SLUNIT(
-	.A(ImmExt),
-	.Y(ImmExt_times_4));
-
-
 SPLICE_PCJ	b2v_spliceUnit(
-	.ir25_0(IR[25:0]),
+	.ir25_0(Instr[25:0]),
 	.pc31_28(PC[31:28]),
 	.Y(PCJump));
 
 
 MUX2_5	b2v_WAMUX(
 	.S(RegDst),
-	.A(IR[20:16]),
-	.B(IR[15:11]),
-	.Y(WA));
+	.A(Instr[20:16]),
+	.B(Instr[15:11]),
+	.Y(WriteRegister));
+
+
+MUX2_5	b2v_WAMUX2(
+	.S(Shift16),
+	.A(Instr[10:6]),
+	.B(SYNTHESIZED_WIRE_4),
+	.Y(SYNTHESIZED_WIRE_3));
 
 
 MUX3_32	b2v_WDMUX(
 	.A(ALUOut),
 	.B(Data),
-	.C(LO_Q),
+	.C(LOval),
 	.S(MemToReg),
-	.Y(WD));
+	.Y(WriteData));
 
 assign	Overflow = OV;
 assign	_PC = PC;
-assign	FUNCTCODE[31:26] = IR[5:0];
-assign	OPCODE[31:26] = IR[31:26];
+assign	FUNCTCODE[31:26] = Instr[5:0];
+assign	OPCODE[31:26] = Instr[31:26];
 assign	state = myState;
 
 endmodule

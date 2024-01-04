@@ -34,8 +34,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 224 32)
 		(output)
-		(text "microinstruction[17..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "microinstruction[17..0]" (rect 119 27 203 39)(font "Arial" ))
+		(text "microinstruction[19..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "microinstruction[19..0]" (rect 119 27 203 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing

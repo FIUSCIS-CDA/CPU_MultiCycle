@@ -27,8 +27,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 32)
 		(input)
-		(text "ALUOp[1..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUOp[1..0]" (rect 21 27 94 46)(font "Intel Clear" (font_size 8)))
+		(text "ALUOp[2..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "ALUOp[2..0]" (rect 21 27 94 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
