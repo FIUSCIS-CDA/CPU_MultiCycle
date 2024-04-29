@@ -34,7 +34,7 @@ localparam CLK_PERIOD=100;
 // CPU will perform check once PC hits this value
 // Note for this CPU you want to go *two* past the end
 // Because PC=PC+4 when the instruction is still running, in state 0
-localparam TERMINALPC=8;
+localparam TERMINALPC=12;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
    CPU_MultiCycle myCPU(.clk(clk), .reset(rst), ._PC(PC), .FUNCTCODE(FUNCTCODE), .OPCODE(OPCODE), .state(STATE));
@@ -43,6 +43,7 @@ localparam TERMINALPC=8;
      ////////////////////////////////////////////////////////////////////////////////////////////////////////////
       // Initialize Instruction Memory with MIPS Bubble Sort         //          INSTRUCTION                    PC
       myCPU.b2v_IDM.memory[0] = 'b00111100000010000000000000000001;  //          lui $t0, 1 	 		0	
+      myCPU.b2v_IDM.memory[1] = 'b00110101000010000000000000000011;  //          ori $t0, $t0, 3 		1	
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
       /////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,11 +57,9 @@ localparam TERMINALPC=8;
   always@(posedge clk)
     begin
         ///////////////////////////////////////////////////////////////////////////////////
-        // When we hit the terminal PC, verify every pair of elements is ascending
-        // This implies the array is sorted, and bubble sort worked correctly
         if(PC === TERMINALPC) begin
-             $display("Testing lui with immediate=1");
-             verifyEqual32(myCPU.b2v_myRF.contents_t0, 65536);
+          $display("Testing lui with immediate=1 and ori with immediate=3");
+          verifyEqual32(myCPU.b2v_myRF.contents_t0, 65539);
           $display("CPU functional");
           $stop;
          end
