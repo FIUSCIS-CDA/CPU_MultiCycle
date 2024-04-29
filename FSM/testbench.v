@@ -39,7 +39,8 @@ localparam CLK_PERIOD=20;
    parameter ADDI = 6'b001000;
    parameter BNE = 6'b000101;
    parameter SLTI = 6'b001010;
-   parameter LUI = 6'b001111;
+   parameter LUI = 6'b001111; 
+   parameter ORI = 6'b001101;
    ///////////////////////////////////////
 
    ///////////////////////////////////////
@@ -271,7 +272,20 @@ endtask
       checkState(15);
       checkState(10);
    $display("[PASS]");
+   ///////////////////////////////////////////////////////  
+
    ///////////////////////////////////////////////////////
+   // ORI: 0->1->16->10
+   $display("Test ORI: 0->1->16->10");
+      Op <= ORI;
+      checkState(0);
+      checkState(1);
+      checkState(16);
+      checkState(10);
+   $display("[PASS]");
+   ///////////////////////////////////////////////////////
+
+
 
    ///////////////////////////////////////////////////////
    // ENSURE FSM RETURNS TO ZERO
