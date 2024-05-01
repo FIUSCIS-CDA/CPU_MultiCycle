@@ -5,7 +5,8 @@
        SameBit,  MUX2,  Flopr_32, Flopenr_32, Flopr, DSwitch, MUX2_5, MUX2_32,
        Four,  SE16_32,  SL2_32,  RF,  Flopenr,  DESwitch,  MUX4_32,   MUX3_32,
        MUX32_32,  MUX32,  Decoder_32, MUX4, MUX3, ALU32, SPLICE_PCJ, ALUBit31,
-       ALUBits0To30, OneBitAdder, INC4, Grounder, OverflowDetection, Sixteen
+       ALUBits0To30, OneBitAdder, INC4, Grounder, OverflowDetection, Sixteen,
+       ZE16_32
 
 #### INPUTS
 Name  | Size(Bits)
@@ -28,6 +29,7 @@ STATE	|	4
        Mapping from ALUOp bits to ALU inputs is done by ALUCtl.
 
 #### SUPPORTED INSTRUCTIONS
+       ORI (SP24)
        LUI (FA23)
        MFLO (SP23)
        MULT (SP23)
